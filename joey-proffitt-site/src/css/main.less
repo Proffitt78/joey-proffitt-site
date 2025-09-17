@@ -1,0 +1,146 @@
+@import "variables.less";
+
+@font-face {
+  font-family: 'MyCustomFont';
+  src: url('@/assets/fonts/Oughter.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Rounded';
+  src: url('@/assets/fonts/Branding Pro Regular.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'RoundedLight';
+  src: url('@/assets/fonts/Branding Pro Light.otf') format('opentype');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+*, *::before, *::after{
+    box-sizing: border-box; /* Set the sizing of an element to include it's border */
+}
+
+*{
+    margin: 0; /* Set the default margin to 0 */
+    padding: 0; /* Set the default padding to 0 */
+}
+
+ul[role='list'], ol[role='list']{
+    list-style: none; /* Turn off numbered and unordered list decoration */
+}
+
+html:focus-within{
+    scroll-behavior: smooth; /* Make the scrolling inside of any scrollable element smooth */
+}
+
+a:not([class]){
+    text-decoration-skip-ink: auto; /* Makes link undelines look better */
+}
+
+img, picture, svg, video, canvas{
+    max-width: 100%; /* Makes it responsive */
+    height: auto; /* Makes it responsive */
+    vertical-align: middle; /* Makes text next to inline images look better */
+    font-style: italic; /* If the images don't load it makes the alt decription look better */
+    background-repeat: no-repeat; 
+    /* The background repeat and size are there if you want to load a picture first like a backroung image that is worse quality while the better quality image loads */
+    background-size: cover;
+}
+
+input, button, textarea, select{
+    font: inherit; /* Makes these elements inherit fonts */
+}
+
+/* Turns off animation for people who don't want to see them */
+@media (prefers-reduced-motion: reduce){
+    html:focus-within {
+        scroll-behavior: auto;
+    }
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+        transition: none;
+    }
+}
+
+body, html{
+    height: 100%; /* Makes the body element full screen */
+    scroll-behavior: smooth; /* Makes normal scrolling smooth */
+}
+
+html {
+    overflow-y: auto!important;
+}
+
+body {
+    margin: 0px;
+}
+
+.v-application {
+    color: @font-main-color;
+}
+
+#app {
+    font-family: Rounded, Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+    color: @primary-color;
+    text-decoration: none;
+}
+
+@media (hover: hover) {
+    a:hover {
+        background-color: hsla(160, 100%, 37%, 0.2);
+    }
+}
+
+.justify-content-end {
+    justify-content: flex-end;
+}
+
+
+/* ======== Common Responsive Breakpoints ======== */
+
+/* Extra small devices (portrait phones, < 576px) */
+@media (max-width: 575.98px) {
+  /* Stack grids, shrink fonts, make nav vertical, etc. */
+}
+
+/* Small devices (landscape phones, 576px–767px) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  /* Slightly larger text, two-column grids, etc. */
+}
+
+/* Medium devices (tablets, 768px–991px) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  /* Tablet layouts: adjust paddings, resize hero images */
+}
+
+/* Large devices (desktops, 992px–1199px) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  /* Standard desktop: your default layout likely fits here */
+}
+
+/* Extra large devices (large desktops, 1200px–1399px) */
+@media (min-width: 1200px) and (max-width: 1399.98px) {
+  /* Wider grids, maybe increase font size */
+}
+
+/* Extra extra large devices (very wide screens, 1400px+) */
+@media (min-width: 1400px) {
+  /* Optional: constrain max-width of content, avoid "too wide" lines */
+}

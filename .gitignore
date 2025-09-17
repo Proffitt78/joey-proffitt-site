@@ -1,0 +1,22 @@
+# Ignore node modules
+node_modules/
+dist/
+
+# Ignore build outputs
+bin/
+obj/
+
+# Ignore Visual Studio settings
+.vs/
+
+# Ignore environment and secrets
+appsettings.Development.json
+appsettings.*.json
+*.env
+
+# Logs
+*.log
+
+# OS junk
+.DS_Store
+Thumbs.db
