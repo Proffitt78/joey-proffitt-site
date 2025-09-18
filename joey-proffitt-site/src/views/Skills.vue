@@ -91,7 +91,7 @@ onMounted(() => {
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
-        border-bottom: 19px solid @accent-color-3;
+        border-bottom: 12px solid @accent-color-3;
         border-top: 5px solid @accent-color-3;
         border-radius: 16px;
         margin-bottom: 60px;
