@@ -71,7 +71,7 @@ onMounted(() => {
             grid-template-columns: 1fr 1fr;
             column-gap: 10px;
 
-            .skills-section:last-child {
+            .skills-section:first-child {
                 grid-column: span 2;
             }
         }
@@ -80,11 +80,11 @@ onMounted(() => {
             grid-template-columns: 1fr 1fr 1fr;
             column-gap: @gutter;
 
-            .skills-section:last-child {
+            .skills-section:first-child {
                 grid-column: span 3;
             }
 
-            .skills-section:nth-last-child(2) {
+            .skills-section:last-child {
                 grid-column: span 3;
             }
         }
