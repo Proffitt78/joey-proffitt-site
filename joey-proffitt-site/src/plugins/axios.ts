@@ -1,9 +1,7 @@
-// src/plugins/axios.ts
 import axios from "axios";
 
 const api = axios.create({
-//   baseURL: "https://localhost:7214/api", // adjust to your API base URL
-  baseURL: "https://joey-proffitt-portfolio-gvbzc7btfkcpeccm.westus2-01.azurewebsites.net/api", // adjust to your API base URL
+  baseURL: import.meta.env.VITE_API_BASE_URL, // use environment variable
 });
 
 export default api;

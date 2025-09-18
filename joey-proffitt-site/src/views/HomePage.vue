@@ -165,18 +165,19 @@ import joey from '@/assets/images/joey-color-bg-1.jpg'
         }
 
         h2 {
-            font-weight: 300;
-            padding: 20px 10px;
-            line-height: 1.3;
-            text-align: right;
-            position: absolute;
+            bottom: -4px;            
             font-size: @10px;
-            bottom: -4px;            right: 0px;
+            font-weight: 300;
+            line-height: 1.3;
+            padding: 20px 10px;
+            position: absolute;
+            right: 0px;
+            text-align: right;
             z-index: 1;
 
-            @media screen and (min-resolution: 2dppx) {
-                border: 3px solid green;
-            }
+            // @media screen and (min-resolution: 2dppx) {
+            //     border: 3px solid green;
+            // }
 
             @media (min-width: 432px) {
                 bottom: -6px;
