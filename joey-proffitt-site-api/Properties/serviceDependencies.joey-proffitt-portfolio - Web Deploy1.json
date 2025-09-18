@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "apis1": {
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.ApiManagement/service/joey-proffitt-site-apiapi/apis/joey-proffitt-site-api",
+      "type": "apis.azure"
+    }
+  }
+}
