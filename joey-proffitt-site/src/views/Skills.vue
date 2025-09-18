@@ -12,7 +12,7 @@
                 :class="index % 2 === 0 ? 'alt-bg' : ''"
                 :style="{
                     backgroundImage: group.backgroundImage
-                    ? `url(/src/assets/images/${group.backgroundImage})`
+                    ? `url(/images/${group.backgroundImage})`
                     : 'none'
                 }"
                 >
