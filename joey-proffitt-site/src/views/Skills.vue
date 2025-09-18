@@ -10,11 +10,7 @@
                 :key="group.categoryId"
                 class="skills-section"
                 :class="index % 2 === 0 ? 'alt-bg' : ''"
-                :style="{
-                    backgroundImage: group.backgroundImage
-                    ? `url(/images/${group.backgroundImage})`
-                    : 'none'
-                }"
+                
                 >
                 <div class="section-header" data-aos="fade-up">
                     <h2><v-icon>{{ group.icon }}</v-icon><span>{{ group.categoryName }}</span></h2>
@@ -95,6 +91,8 @@ onMounted(() => {
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
+        border-bottom: 19px solid @accent-color-3;
+        border-top: 5px solid @accent-color-3;
         border-radius: 16px;
         margin-bottom: 60px;
         overflow: hidden;
