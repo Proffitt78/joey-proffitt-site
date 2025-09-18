@@ -69,6 +69,10 @@
         padding-top: 0px;
         .gradient-vertical(@primary-color, @page-bg-color);
     }
+
+    &#contact {
+        background-color: @primary-color;
+    }
 }
 
 .main-section:nth-child(odd) {

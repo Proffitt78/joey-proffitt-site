@@ -95,6 +95,7 @@ const navLinks = [
 
     &:hover {
         opacity: 0.8;
+        background-color: transparent;
     }
 
     span {

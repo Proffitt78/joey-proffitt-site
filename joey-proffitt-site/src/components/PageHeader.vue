@@ -44,7 +44,7 @@ defineProps<{
 
     @media(min-width: 992px) {
         border-bottom: 18px solid @accent-color-2;
-        box-shadow: 0px 3px 0px @accent-color-3;
+        box-shadow: 0px 3px 0px @secondary-color;
         font-size: @66px;
     }
 
