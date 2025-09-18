@@ -6,7 +6,7 @@
       <p>{{ description }}</p>
     </div>
 
-    <!-- Slot for custom extra content if needed -->
+    <!-- Slot for custom extra content if needed fool -->
     <slot></slot>
   </div>
 </template>
