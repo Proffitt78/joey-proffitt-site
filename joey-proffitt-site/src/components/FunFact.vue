@@ -48,7 +48,7 @@ onMounted(() => {
   fetchFact();
 
   if (props.auto) {
-    const interval = props.interval ?? 30000; // default 30s
+    const interval = props.interval ?? 3000000; // default 30s
     timer = window.setInterval(fetchFact, interval);
   }
 });
