@@ -214,7 +214,7 @@ function formatDetails(details: string | null): string {
                 font-family: RoundedLight, Avenir, Helvetica, Arial, sans-serif;
                 font-size: .px(14)[@value];
                 line-height: 1.1;
-                padding-left: 10px;
+                padding-left: 8px;
                 font-weight: 100;
                 opacity: 0.9;
 
