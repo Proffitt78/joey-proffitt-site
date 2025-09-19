@@ -164,7 +164,7 @@ function formatDetails(details: string | null): string {
             color: #fff;
             column-gap: 5px;
             display: flex;
-            justify-content: center;
+            justify-content: flex-start;
             margin: 0 auto 40px auto;
             padding: 10px 20px;
             z-index: 1;
