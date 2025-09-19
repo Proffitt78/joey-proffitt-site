@@ -36,22 +36,29 @@
                                     class="skill-details-dialog">
                                     <template v-slot:default="{ isActive }">
                                         <v-card>
-                                        <v-card-title class="d-flex align-center">
-                                            <v-icon size="28" class="mr-2">{{ skill.icon }}</v-icon>
-                                            <span class="text-h6">{{ skill.skillName }}</span>
-                                            <v-spacer></v-spacer>
-                                            <v-btn icon="mdi-close" variant="text" @click="isActive.value = false"></v-btn>
-                                        </v-card-title>
+                                            <v-card-title :style="{backgroundImage: group.backgroundImage ? `url(/images/${group.backgroundImage})` : 'none'}">
+                                                <div class="skill-name-wrap d-flex align-top" >
+                                                    <div class="icon-text-wrap">
+                                                        <v-icon size="28" class="mr-2">{{ skill.icon }}</v-icon>
+                                                        <span class="text-h6">{{ skill.skillName }}</span>
+                                                    </div>
+                                                    <v-spacer></v-spacer>
+                                                    <v-btn icon="mdi-close" variant="text" @click="isActive.value = false"></v-btn>
+                                                </div>
+                                                <div class="group-name">
+                                                    <h2><v-icon>{{ group.icon }}</v-icon><span>{{ group.categoryName }}</span></h2>
+                                                </div>
+                                            </v-card-title>
 
-                                        <v-card-text>
-                                            <!-- Render rich text / formatted details -->
-                                            <div class="skill-details" v-html="formatDetails(skill.details)"></div>
-                                        </v-card-text>
+                                            <v-card-text>
+                                                <!-- Render rich text / formatted details -->
+                                                <div class="skill-details" v-html="formatDetails(skill.details)"></div>
+                                            </v-card-text>
 
-                                        <v-card-actions>
-                                            <v-spacer></v-spacer>
-                                            <v-btn text="Close" @click="isActive.value = false"></v-btn>
-                                        </v-card-actions>
+                                            <v-card-actions>
+                                                <v-spacer></v-spacer>
+                                                <v-btn text="Close" @click="isActive.value = false"></v-btn>
+                                            </v-card-actions>
                                         </v-card>
                                     </template>
                                 </v-dialog>
@@ -143,8 +150,8 @@ function formatDetails(details: string | null): string {
             position: absolute;
             inset: 0;
             background: linear-gradient(
-                rgba(0, 0, 0, 0.7),
-                rgba(0, 0, 0, 0.7)
+                fade(@secondary-color, 20%),
+                fade(@primary-color, 30%)
             );
             z-index: 0;
         }
@@ -263,25 +270,72 @@ function formatDetails(details: string | null): string {
 @import '../css/variables.less';
 .skill-details-dialog {
     background-color: fade(@primary-color, 90%);
+
     .v-card {
         background-color: lighten(@secondary-color, 30%);
         // border-left: 2px solid @accent-color-3;
         // border-right: 2px solid @accent-color-3;
+        color: #fff;
 
         .v-card-title {
             background-color: @accent-color-2;
+            padding: 10px 0px 10px;
+            background-repeat: no-repeat;
+            background-size: cover;
 
-            color: #fff;
+            .skill-name-wrap {
+
+                .icon-text-wrap {
+                    background-color: fade(@accent-color-2, 90%);
+                    border-top: 2px solid @tertiary-color;
+                    margin-top: 20px;
+                    padding: 49px;
+                }
+
+                .v-btn {
+                    background-color: @primary-color;
+                    margin-right: 10px;
+                }
+            }
+
+
+            .group-name {
+                padding-right: 20px;
+                text-align: right;
+
+                h2{
+                    display: flex;
+                    align-items: center;
+                    font-size: .px(20)[@value];
+                    justify-content: flex-end;
+                    line-height: 1;
+
+                    .v-icon {
+                        font-size: .px(20)[@value];
+                    }
+
+                    span {
+                        line-height: 1;
+                        display: inline-block;
+                    }
+                }
+            }
         }
     }
-}
-.skill-details {
-    background-color: lighten(@secondary-color, 40%);
-    padding: 30px;
 
-    p {
-        margin-bottom: 0.75rem;
-        line-height: 1.5;
+    .skill-details {
+        background-color: lighten(@secondary-color, 40%);
+        color: @primary-color;
+        padding: 30px;
+    
+        p {
+            margin-bottom: 0.75rem;
+            line-height: 1.5;
+        }
+    }
+
+    .v-card-actions {
+        color: @primary-color;
     }
 }
 </style>

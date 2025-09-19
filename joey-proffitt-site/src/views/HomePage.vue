@@ -44,7 +44,7 @@
                     <secton class="fun-fact">
                         <FunFact
                             auto
-                            :interval="60000" />
+                            :interval="3600000" />
                     </secton>
                 </section>
             </div>
