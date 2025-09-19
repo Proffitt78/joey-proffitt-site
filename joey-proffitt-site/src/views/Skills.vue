@@ -9,12 +9,15 @@
                 v-for="(group, index) in categories"
                 :key="group.categoryId"
                 class="skills-section"
-                :class="index % 2 === 0 ? 'alt-bg' : ''"
-                
-                >
+                :class="index % 2 === 0 ? 'alt-bg' : ''">
                 <div class="section-header" data-aos="fade-up">
-                    <h2><v-icon>{{ group.icon }}</v-icon><span>{{ group.categoryName }}</span></h2>
-                    <div class="skill-description">{{ group.description }}</div>
+                    <div>
+                        <v-icon>{{ group.icon }}</v-icon>
+                    </div>
+                    <div>
+                        <h2>{{ group.categoryName }}</h2>
+                        <div class="skill-description">{{ group.description }}</div>
+                    </div>
                 </div>
         
                 <v-container>
@@ -157,30 +160,51 @@ function formatDetails(details: string | null): string {
         }
 
         .section-header {
-            color: #fff;
-            display: flex;
-            flex-direction: column;
-            margin: 0 auto 40px auto;
-            max-width: 800px;
-            position: relative;
-            z-index: 1;
-            justify-content: center;
             background-color: fade(@accent-color-2, 80%);
+            color: #fff;
+            column-gap: 5px;
+            display: flex;
+            justify-content: center;
+            margin: 0 auto 40px auto;
             padding: 10px 20px;
+            z-index: 1;
+
+            >div {
+
+                .v-icon {
+                    font-size: .px(40)[@value];
+                    margin: 0;
+                    color: @tertiary-color;
+    
+                    &.mdi-code-tags{
+                        position: relative;
+                        top: -7px
+                    }
+
+                    &.mdi-database{
+                        position: relative;
+                        top: -4px
+                    }
+
+                    &.mdi-account-group{
+                        position: relative;
+                        top: -7px
+                    }
+                }
+            }
 
             h2 {
                 align-items: center;
                 display: flex;
                 font-weight: 700;
                 font-size: 2rem;
-                column-gap: 10px;
                 line-height: 1;
-                margin: 0;
+                margin: 0 0 5px;
 
-                .v-icon {
-                    font-size: .px(40)[@value];
-                    margin: 0;
-                    color: @tertiary-color;
+
+                span {
+                    position: relative;
+                    top: 3px;
                 }
             }
 
@@ -192,7 +216,6 @@ function formatDetails(details: string | null): string {
                 opacity: 0.9;
 
                 @media(min-width: 1200px) {
-                    padding: 0 10px 0 50px;
                     font-size: .px(16)[@value];
                 }
             }
@@ -261,9 +284,6 @@ function formatDetails(details: string | null): string {
             }
         }
     }
-
-        
-
 }
 </style>
 <style lang="less">
@@ -300,7 +320,7 @@ function formatDetails(details: string | null): string {
 
 
             .group-name {
-                padding-right: 20px;
+                padding: 10px 20px 0 0;
                 text-align: right;
 
                 h2{
