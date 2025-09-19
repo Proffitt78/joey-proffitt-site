@@ -7,6 +7,7 @@
         public string SkillName { get; set; } = string.Empty;
         public string? Icon { get; set; }
         public DateTime CreatedAt { get; set; }
+        public string? Details { get; set; }
 
         // navigation
         public SkillCategory? Category { get; set; }

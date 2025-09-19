@@ -4,6 +4,7 @@ export interface Skill {
   skillName: string;
   icon: string;
   createdAt: string;
+  details: string;
   category?: SkillCategory | null; // optional to match API
 }
 

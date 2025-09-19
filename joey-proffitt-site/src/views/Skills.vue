@@ -24,12 +24,37 @@
                             v-for="(skill, idx) in group.skills"
                             :key="skill.skillId">
                             <v-card
-                                class="pa-4 text-center"
+                                class="pa-4 text-center skill-card"
                                 elevation="3"
                                 data-aos="fade-up"
                                 :data-aos-delay="idx * 100">
                                 <v-icon size="36">{{ skill.icon }}</v-icon>
                                 <div>{{ skill.skillName }}</div>
+                                <v-dialog 
+                                    activator="parent"
+                                    max-width="500"
+                                    class="skill-details-dialog">
+                                    <template v-slot:default="{ isActive }">
+                                        <v-card>
+                                        <v-card-title class="d-flex align-center">
+                                            <v-icon size="28" class="mr-2">{{ skill.icon }}</v-icon>
+                                            <span class="text-h6">{{ skill.skillName }}</span>
+                                            <v-spacer></v-spacer>
+                                            <v-btn icon="mdi-close" variant="text" @click="isActive.value = false"></v-btn>
+                                        </v-card-title>
+
+                                        <v-card-text>
+                                            <!-- Render rich text / formatted details -->
+                                            <div class="skill-details" v-html="formatDetails(skill.details)"></div>
+                                        </v-card-text>
+
+                                        <v-card-actions>
+                                            <v-spacer></v-spacer>
+                                            <v-btn text="Close" @click="isActive.value = false"></v-btn>
+                                        </v-card-actions>
+                                        </v-card>
+                                    </template>
+                                </v-dialog>
                             </v-card>
                         </div>
                     </v-row>
@@ -52,6 +77,15 @@ const { categories } = storeToRefs(skillsStore);
 onMounted(() => {
   skillsStore.fetchSkills();
 });
+
+function formatDetails(details: string | null): string {
+  if (!details) return "";
+  // Convert line breaks into <p> blocks
+  return details
+    .split(/\n+/)
+    .map(line => `<p>${line.trim()}</p>`)
+    .join("");
+}
 
 </script>
 
@@ -183,6 +217,7 @@ onMounted(() => {
                         border: 5px solid lighten(@accent-color-3, 20%);        
                         border-radius: 12px;
                         color: lighten(@accent-color-3, 20%);
+                        cursor: pointer;
                         display: flex;
                         flex-direction: column;
                         font-size: @14px;
@@ -218,6 +253,35 @@ onMounted(() => {
                 }
             }
         }
+    }
+
+        
+
+}
+</style>
+<style lang="less">
+@import '../css/variables.less';
+.skill-details-dialog {
+    background-color: fade(@primary-color, 90%);
+    .v-card {
+        background-color: lighten(@secondary-color, 30%);
+        // border-left: 2px solid @accent-color-3;
+        // border-right: 2px solid @accent-color-3;
+
+        .v-card-title {
+            background-color: @accent-color-2;
+
+            color: #fff;
+        }
+    }
+}
+.skill-details {
+    background-color: lighten(@secondary-color, 40%);
+    padding: 30px;
+
+    p {
+        margin-bottom: 0.75rem;
+        line-height: 1.5;
     }
 }
 </style>
