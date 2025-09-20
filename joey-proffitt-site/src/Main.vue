@@ -8,6 +8,9 @@
             <section id="skills" class="main-section">
                 <Skills />
             </section>
+            <section id="about" class="main-section">
+                <About />
+            </section>
             <section id="contact" class="main-section">
                 <Contact />
             </section>
@@ -22,6 +25,7 @@
     import HomePage from './views/HomePage.vue'
     import Skills from './views/Skills.vue'
     import Contact from './views/Contact.vue'
+    import About from './views/About.vue'
 </script>
 
 <style lang="less">
@@ -48,11 +52,11 @@
     max-width: none;
 }
 .main-section {
+    align-items: flex-start; // center content vertically
+    display: flex;
+    justify-content: center;
     min-height: calc(100vh - 64px); // each section takes up full viewport height
     padding: calc(20px + 64px) 0 40px;
-    display: flex;
-    align-items: flex-start; // center content vertically
-    justify-content: center;
     position: relative;
     scroll-snap-align: start;
 
@@ -81,11 +85,6 @@
 
 .main-section:nth-child(even) {
     // background-color: lighten(@primary-color, 5%);
-}
-
-.main-section-header {
-    
-
 }
 
 html {

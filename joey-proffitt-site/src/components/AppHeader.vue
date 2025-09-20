@@ -71,6 +71,7 @@ const mobile = computed(() => smAndDown.value)
 // Define navigation links
 const navLinks = [
     { label: 'Skills', to: '/skills', icon: 'mdi-code-tags' },
+    { label: 'About', to: '/about', icon: 'mdi-code-tags' },
     { label: 'Contact', to: '/contact', icon: 'mdi-email' },
 ]
 </script>

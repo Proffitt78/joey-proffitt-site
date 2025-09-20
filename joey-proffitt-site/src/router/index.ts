@@ -23,8 +23,8 @@ const router = createRouter({
       redirect: { path: '/', hash: '#skills' }
     },
     {
-      path: '/social',
-      redirect: { path: '/', hash: '#social' }
+      path: '/about',
+      redirect: { path: '/', hash: '#about' }
     },
     // Example of a *real* page (not part of scrolling layout)
     // {
