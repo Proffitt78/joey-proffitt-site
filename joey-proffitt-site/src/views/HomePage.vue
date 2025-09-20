@@ -155,35 +155,35 @@ import JPLogo from '@/assets/icons/jp-svg.svg'
         h1 {
             border: 0;
             font-family: MyCustomFont, Avenir, Helvetica, Arial, sans-serif;
-            font-size: @28px;
-            padding-bottom: @10px;
+            font-size: .px(28)[@value];
+            padding-bottom: 10px;
             position: relative;
             text-align: center;
             text-shadow: -2px -2px 0 @primary-color, 2px -2px 0 @primary-color, -2px 2px 0 @primary-color, 2px 2px 0 @primary-color;
             
             
             @media (min-width: 432px) {
-                font-size: @30px;
+                font-size: .px(30)[@value];
             }
             
             /* Small devices (landscape phones, 576px–767px) */
             @media (min-width: 576px) {
-                font-size: @50px;
+                font-size: .px(50)[@value];
             }
             
             /* Medium devices (tablets, 768px–991px) */
             @media (min-width: 768px) and (max-width: 991.98px) {
-                font-size: @66px;
+                font-size: .px(66)[@value];
             }
             
             /* Large devices (desktops, 992px–1199px) */
             @media (min-width: 992px) and (max-width: 1199.98px) {
-                font-size: @90px;
+                font-size: .px(90)[@value];
             }
             
             /* Extra large devices (large desktops, 1200px–1399px) */
             @media (min-width: 1200px) {
-                font-size: @96px;
+                font-size: .px(96)[@value];
                 margin-bottom: -18px;
             }
             
@@ -214,13 +214,13 @@ import JPLogo from '@/assets/icons/jp-svg.svg'
 
                 /* Small devices (landscape phones, 576px–767px) */
                 @media (min-width: 576px) {
-                    height: @32px;        
+                    height: 32px;        
                     bottom: 18px;
                 }
 
                 /* Medium devices (tablets, 768px–991px) */
                 @media (min-width: 768px) {
-                    height: @40px;        
+                    height: 40px;        
                     bottom: 19px;
                 }
 
@@ -247,7 +247,7 @@ import JPLogo from '@/assets/icons/jp-svg.svg'
 
     #info-wrap {
         height: auto;
-        padding: @10px @5px;
+        padding: 10px 5px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -290,22 +290,22 @@ import JPLogo from '@/assets/icons/jp-svg.svg'
             align-items: center;
             display: flex;
             flex-direction: column;
-            font-size: @14px;
-            row-gap: @4px;
+            font-size: .px(14)[@value];
+            row-gap: 4px;
 
             @media(min-width: 768px) {
-                font-size: @18px;
+                font-size: .px(18)[@value];
                 row-gap: 6px;
             }
 
             @media(min-width: 1200px) {
-                font-size: @20px;
+                font-size: .px(20)[@value];
                 row-gap: @gutter;
             }
 
             .v-icon.linked-in {
                 color: white;
-                font-size: @40px;
+                font-size: .px(40)[@value];
             }
         }
 
@@ -330,7 +330,7 @@ import JPLogo from '@/assets/icons/jp-svg.svg'
 
             h3 {
                 font-size: .px(16)[@value];
-                padding: @4px 0 @2px;
+                padding: 4px 0 2px;
                 font-weight: 100;
                 text-align: center;
 
@@ -341,7 +341,7 @@ import JPLogo from '@/assets/icons/jp-svg.svg'
 
                 @media (min-width: 1200px){
                     font-size: .px(20)[@value];
-                    padding: @10px 0 @5px;
+                    padding: 10px 0 5px;
                 }
             }
 
@@ -356,7 +356,7 @@ import JPLogo from '@/assets/icons/jp-svg.svg'
                 margin-bottom: 10px;
                 color: @primary-color;                
                 padding: 0px 14px;
-                font-size: @12px;
+                font-size: .px(12)[@value];
                 width: 100%;
 
                 @media (min-width: 576px){
@@ -367,7 +367,7 @@ import JPLogo from '@/assets/icons/jp-svg.svg'
                 }
 
                 @media(min-width: 768px){
-                    font-size: @14px;
+                    font-size: .px(14)[@value];
                     padding: 0px 16px;
                 }
 

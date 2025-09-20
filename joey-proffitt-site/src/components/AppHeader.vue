@@ -90,7 +90,7 @@ const navLinks = [
     color: #fff;
     display: flex;
     font-weight: bold;
-    font-size: 1.2rem;
+    font-size: .px(19)[@value];
     gap: 6px; /* space between logo and text */
     text-decoration: none;
 

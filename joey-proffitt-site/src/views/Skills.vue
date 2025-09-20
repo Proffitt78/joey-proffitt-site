@@ -199,7 +199,7 @@ function formatDetails(details: string | null): string {
                 align-items: center;
                 display: flex;
                 font-weight: 700;
-                font-size: 2rem;
+                font-size: .px(32)[@value];
                 line-height: 1;
                 margin: 0;
 
@@ -253,7 +253,7 @@ function formatDetails(details: string | null): string {
                         cursor: pointer;
                         display: flex;
                         flex-direction: column;
-                        font-size: @14px;
+                        font-size: .px(14)[@value];
                         height: 100%;
                         justify-content: center;
                         padding: 0px;
@@ -269,12 +269,12 @@ function formatDetails(details: string | null): string {
                         }
 
                         @media(min-width: 992px) {
-                            font-size: @16px;
+                            font-size: .px(16)[@value];
                         }
     
     
                         .v-icon {
-                            font-size: 36px;
+                            font-size: .px(36)[@value];
                             color: lighten(@accent-color-3, 20%);;
                         }
     

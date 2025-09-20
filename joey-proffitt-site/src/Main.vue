@@ -40,7 +40,7 @@
 
 .logo-wrap {
     .logo {
-        font-size: @30px;
+        font-size: .px(30)[@value];
         
         a {
             color: @tertiary-color;
@@ -124,7 +124,7 @@ html {
 
     a.router-link-active {
         background-color: @page-bg-color;
-        border-radius: @4px;
+        border-radius: 4px;
         color: @primary-color;
         padding: 10px;
 
@@ -141,7 +141,7 @@ html {
     }
 
     span {
-        font-size: @14px;
+        font-size:.px(14)[@value];
     }
 }
 

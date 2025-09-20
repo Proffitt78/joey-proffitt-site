@@ -76,22 +76,26 @@ onUnmounted(() => {
 }
 
 .fun-fact {
-    margin: @5px 0;
-    padding: @5px;
+    margin: 5px 0;
+    padding: 5px;
     font-family: RoundedLight, Avenir, Helvetica, Arial, sans-serif;
     font-style: italic;
     text-align: right;
-    font-size: @10px;
+    font-size: .px(10)[@value];
+
+    @media(min-width: 576px) {
+        font-size: .px(14)[@value];
+    }
 
     @media(min-width: 768px) {
-        font-size: @14px;
+        font-size: .px(16)[@value];
     }
    
 
     @media(min-width: 1200px) {
-        font-size: @16px;
-        margin: @10px 0;
-        padding: @16px;
+        font-size: .px(18)[@value];
+        margin: 10px 0;
+        padding: 16px;
     }
 
     &.auto-mode {

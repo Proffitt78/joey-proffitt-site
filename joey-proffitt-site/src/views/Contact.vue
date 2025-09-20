@@ -68,7 +68,7 @@
                 display: flex;
                 align-items: center;
                 gap: 0.5rem;
-                font-size: 1.1rem;
+                font-size: .px(18)[@value];
             
                 .v-icon {
                     color: @tertiary-color;
