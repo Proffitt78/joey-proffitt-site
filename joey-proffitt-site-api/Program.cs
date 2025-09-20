@@ -24,7 +24,7 @@ builder.Services.AddDbContext<JoeyProffittDbContext>(options =>
         builder.Configuration.GetConnectionString("JoeyProffittDbContext"),
         sqlOptions => sqlOptions.EnableRetryOnFailure(
             maxRetryCount: 5,               // how many retries
-            maxRetryDelay: TimeSpan.FromSeconds(10), // wait time between retries
+            maxRetryDelay: TimeSpan.FromSeconds(3), // wait time between retries
             errorNumbersToAdd: null         // can leave null for default transient errors
         )
     )

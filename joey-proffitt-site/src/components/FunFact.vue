@@ -1,19 +1,39 @@
 <template>
-  <div class="fun-fact" :class="{ 'auto-mode': auto }">
-      <!-- Transition wrapper -->
-      <Transition name="fade-slide" mode="out-in">
-        <p v-if="loading">Loading a fun fact...</p>
-        <p v-else :key="fact">{{ fact }}</p>
-    </Transition>
+    <div class="fun-fact" :class="{ 'auto-mode': auto }">
+        <!-- Loading State -->
+        <div v-if="loading" class="loading-wrap">
+            <v-progress-circular indeterminate color="primary" size="48" />
+            <p class="loading-text">Loading a fun fact...</p>
+        </div>
 
-    <!-- Only show button if not in auto mode -->
-    <button
-      v-if="!auto"
-      @click="fetchFact"
-      class="btn">
-      Get Another Fact
-    </button>
-  </div>
+        <!-- Error State -->
+        <div v-else-if="error" class="error-wrap">
+            <v-alert type="error" title="Oops!">
+                {{ error }}
+            </v-alert>
+            <div class="retry-wrap">
+                <p>Couldn’t load a fun fact. Click below to try again.</p>
+                <v-btn
+                    variant="elevated"
+                    prepend-icon="mdi-refresh"
+                    @click="fetchFact">
+                    Try Again
+                </v-btn>
+            </div>
+        </div>
+        <!-- Transition wrapper -->
+        <Transition v-else  name="fade-slide" mode="out-in">
+            <p :key="fact">{{ fact }}</p>
+        </Transition>
+
+        <!-- Only show button if not in auto mode -->
+        <button
+            v-if="!auto"
+            @click="fetchFact"
+            class="btn">
+            Get Another Fact
+        </button>
+    </div>
 </template>
 
 <script setup lang="ts">
@@ -29,16 +49,19 @@ const props = defineProps<Props>();
 
 const fact = ref<string>("");
 const loading = ref<boolean>(true);
+const error = ref<string | null>(null);
 let timer: number | null = null;
 
 const fetchFact = async () => {
   try {
     loading.value = true;
+    error.value = null;
     const response = await api.get("/funfacts/random");
+    console.log("Fact: ", response)
     fact.value = response.data.fact;
-  } catch (error) {
-    console.error("Error fetching fun fact:", error);
-    fact.value = "Couldn’t fetch a fun fact 😅";
+  } catch (err: any) {
+    console.error("Error fetching fun fact:", err);
+    error.value = err.message || "Couldn’t fetch a fun fact 😅";
   } finally {
     loading.value = false;
   }
