@@ -20,7 +20,15 @@ builder.Services.AddSwaggerGen();
 
 // Register DbContext
 builder.Services.AddDbContext<JoeyProffittDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("JoeyProffittDbContext")));
+    options.UseSqlServer(
+        builder.Configuration.GetConnectionString("JoeyProffittDbContext"),
+        sqlOptions => sqlOptions.EnableRetryOnFailure(
+            maxRetryCount: 5,               // how many retries
+            maxRetryDelay: TimeSpan.FromSeconds(10), // wait time between retries
+            errorNumbersToAdd: null         // can leave null for default transient errors
+        )
+    )
+);
 
 builder.Services.AddScoped<ISkillCategoryRepository, SkillCategoryRepository>();
 
