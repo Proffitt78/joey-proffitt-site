@@ -81,7 +81,7 @@ onUnmounted(() => {
     font-family: RoundedLight, Avenir, Helvetica, Arial, sans-serif;
     font-style: italic;
     text-align: right;
-    font-size: .px(10)[@value];
+    font-size: .px(12)[@value];
 
     @media(min-width: 576px) {
         font-size: .px(14)[@value];

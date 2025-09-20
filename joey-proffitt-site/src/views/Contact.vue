@@ -144,6 +144,14 @@
                     }
 
                     @media(min-width: 1400px) {
+                        font-size: .px(196)[@value];
+                    }
+
+                    @media(min-width: 1600px) {
+                        font-size: .px(228)[@value];
+                    }
+
+                    @media(min-width: 1770px) {
                         font-size: .px(264)[@value];
                     }
 
