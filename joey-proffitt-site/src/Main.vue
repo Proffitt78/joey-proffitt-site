@@ -30,7 +30,10 @@
 
 <style lang="less">
 @import './css/variables.less';
-
+#main-container {
+    // border: 30px solid red;
+    overflow-x: hidden;
+}
 .v-main {
     background-color: @page-bg-color;
   }
