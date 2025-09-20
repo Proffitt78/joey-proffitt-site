@@ -4,7 +4,32 @@
             title="Skills" 
             description="The skills below are powered by a backend API I built in C# and hosted in Azure." />
 
-        <div class="categories-wrap">
+        <!-- Loading Indicator -->
+        <div v-if="loading" class="loading-wrap">
+            <v-progress-circular
+                indeterminate
+                color="primary"
+                size="64" />
+            <p class="loading-text">Loading skills...</p>
+        </div>
+
+        <!-- Error State -->
+        <div v-else-if="error" class="error-wrap">
+            <v-alert type="error" title="Oops!">
+                {{ error }}
+            </v-alert>
+            <div class="retry-wrap">
+                <p>The data required for this section did not load.<br />Click the button to try again.</p>
+                <v-btn 
+                    variant="elevated" 
+                    prepend-icon="mdi-refresh" 
+                    @click="skillsStore.fetchSkills()">
+                    Try Again
+                </v-btn>
+            </div>
+        </div>
+
+        <div v-else class="categories-wrap">
             <section
                 v-for="(group, index) in categories"
                 :key="group.categoryId"
@@ -82,7 +107,7 @@ import { useSkillsStore } from "@/stores/skills";
 import PageHeader from '@/components/PageHeader.vue';
 
 const skillsStore = useSkillsStore();
-const { categories } = storeToRefs(skillsStore);
+const { categories, loading, error} = storeToRefs(skillsStore);
 
 onMounted(() => {
   skillsStore.fetchSkills();

@@ -149,4 +149,43 @@ html {
     background-color: @accent-color-2;
     color: #fff;
 }
+
+//== Gloabl Loading and Error Styling ==//
+.loading-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 80px 0;
+    text-align: center;
+
+    .loading-text {
+        margin-top: 20px;
+        font-size: 1.1rem;
+        font-weight: 500;
+        color: @accent-color-3;
+    }
+}
+
+.error-wrap {
+    display: flex;
+    flex-direction: column;
+    font-size: .px(24)[@value];
+    margin: 0 auto;
+    max-width: 600px;
+    padding: 40px 0;
+    row-gap: 20px;
+
+    .retry-wrap {
+        display: flex;
+        flex-direction: column;
+        row-gap: 20px;
+        align-items: center;
+
+        p {
+            text-align: center;
+        }
+    }
+    
+}
+//======================================//
 </style>
