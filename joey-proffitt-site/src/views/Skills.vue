@@ -10,7 +10,7 @@
                 indeterminate
                 color="primary"
                 size="64" />
-            <p class="loading-text">Loading skills...</p>
+            <p class="loading-text">Loading skills...<br /> This may take a minute.<br />The database, hosted by Azure, needs to be awakened.<br />(on the budget plan)</p>
         </div>
 
         <!-- Error State -->
