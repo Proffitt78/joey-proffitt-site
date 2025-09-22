@@ -50,9 +50,11 @@
                     <div class="shadow-3"></div>
                     <div class="shadow-4"></div>
                 </div>
-            </section>                
-        </div>
-        
+            </section>
+            <section class="orb-container">
+                <div class="orb" v-for="n in 12" :key="n"></div>
+            </section>
+        </div>        
         <secton class="fun-fact">
             <FunFact
                 auto
@@ -438,8 +440,126 @@ import JPLogo from '@/assets/icons/jp-svg.svg'
         }
     }
 
-    
+    //////////////
 
+    // Shared animation
+    @keyframes liquidFloat {
+        0% {
+            transform: translate(0, 0) scale(1);
+        }
+        25% {
+            transform: translate(15px, -15px) scale(1.05);
+        }
+        50% {
+            transform: translate(-15px, 15px) scale(0.98);
+        }
+        75% {
+            transform: translate(12px, 9px) scale(1.02);
+        }
+        100% {
+            transform: translate(0, 0) scale(1);
+        }
+    }
+
+    .portfolio-main-image {
+        .shadow-1, .shadow-2, .shadow-3, .shadow-4 {
+            animation: liquidFloat 20s ease-in-out infinite;
+            will-change: transform;
+        }
+
+        // Offset each one’s animation slightly for organic feel
+        .shadow-1 {
+            animation-duration: 22s;
+            animation-delay: 0s;
+        }
+        .shadow-2 {
+            animation-duration: 26s;
+            animation-delay: -5s;
+        }
+        .shadow-3 {
+            animation-duration: 30s;
+            animation-delay: -10s;
+        }
+        .shadow-4 {
+            animation-duration: 35s;
+            animation-delay: -15s;
+        }
+    }
     
+    ///////////////////////////
+
+    .orb-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        pointer-events: none; // ensures clicks go through
+        z-index: 2; // behind logo but above background
+    }
+
+    .orb {
+        position: absolute;
+        border-radius: 50%;
+        background: fade(@accent-color-3, 60%);
+        width: 10px;
+        height: 10px;
+        opacity: 0;
+        animation: orbFloat 12s linear infinite;
+    }
+
+    // Add variation with nth-child
+    .orb:nth-child(2n) {
+        background: fade(@secondary-color, 60%);
+    }
+    .orb:nth-child(3n) {
+        width: 14px;
+        height: 14px;
+    }
+    .orb:nth-child(4n) {
+        width: 8px;
+        height: 8px;
+        background: fade(@accent-color-3, 40%);
+    }
+
+    // Position random-ish
+    .orb:nth-child(1) { top: 10%; left: 20%; animation-delay: 0s; }
+    .orb:nth-child(2) { top: 40%; left: 70%; animation-delay: 3s; }
+    .orb:nth-child(3) { top: 80%; left: 50%; animation-delay: 6s; }
+    .orb:nth-child(4) { top: 25%; left: 85%; animation-delay: 9s; }
+    .orb:nth-child(5) { top: 60%; left: 15%; animation-delay: 12s; }
+    .orb:nth-child(6) { top: 75%; left: 30%; animation-delay: 15s; }
+    .orb:nth-child(7) { top: 20%; left: 60%; animation-delay: 18s; }
+    .orb:nth-child(8) { top: 50%; left: 40%; animation-delay: 21s; }
+    .orb:nth-child(9) { top: 15%; left: 75%; animation-delay: 24s; }
+    .orb:nth-child(10){ top: 90%; left: 25%; animation-delay: 27s; }
+    .orb:nth-child(11){ top: 65%; left: 80%; animation-delay: 30s; }
+    .orb:nth-child(12){ top: 35%; left: 10%; animation-delay: 33s; }
+
+    // Keyframes for appearing, drifting, fading
+    @keyframes orbFloat {
+        0% {
+            opacity: 0;
+            transform: translateY(0) scale(0.8);
+        }
+        10% {
+            opacity: 1;
+            transform: translateY(-10px) scale(1);
+        }
+        50% {
+            opacity: 0.7;
+            transform: translateY(-30px) scale(1.1);
+        }
+        80% {
+            opacity: 1;
+            transform: translateY(-50px) scale(0.9);
+        }
+        100% {
+            opacity: 0;
+            transform: translateY(-70px) scale(0.7);
+        }
+    }
+
 }
 </style>
