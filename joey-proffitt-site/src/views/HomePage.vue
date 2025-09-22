@@ -469,19 +469,19 @@ import JPLogo from '@/assets/icons/jp-svg.svg'
 
         // Offset each one’s animation slightly for organic feel
         .shadow-1 {
-            animation-duration: 22s;
+            animation-duration: 12s;
             animation-delay: 0s;
         }
         .shadow-2 {
-            animation-duration: 26s;
+            animation-duration: 16s;
             animation-delay: -5s;
         }
         .shadow-3 {
-            animation-duration: 30s;
+            animation-duration: 20s;
             animation-delay: -10s;
         }
         .shadow-4 {
-            animation-duration: 35s;
+            animation-duration: 25s;
             animation-delay: -15s;
         }
     }
@@ -506,7 +506,7 @@ import JPLogo from '@/assets/icons/jp-svg.svg'
         width: 10px;
         height: 10px;
         opacity: 0;
-        animation: orbFloat 12s linear infinite;
+        animation: orbFloat 6s linear infinite;
     }
 
     // Add variation with nth-child
