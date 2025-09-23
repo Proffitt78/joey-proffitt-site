@@ -287,6 +287,12 @@ function formatDetails(details: string | null): string {
                         &:hover {
                             transform: translateY(-6px);
                             box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.2);
+                            background-color: @tertiary-color;
+                            color: darken(@accent-color-1, 40%);
+
+                            .v-icon {
+                                color: darken(@accent-color-1, 40%);
+                            }
                         }
     
                         @media (min-width: 768px) {
@@ -296,8 +302,7 @@ function formatDetails(details: string | null): string {
                         @media(min-width: 992px) {
                             font-size: .px(16)[@value];
                         }
-    
-    
+        
                         .v-icon {
                             font-size: .px(36)[@value];
                             color: lighten(@accent-color-3, 20%);;
