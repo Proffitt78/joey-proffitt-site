@@ -282,7 +282,7 @@ function formatDetails(details: string | null): string {
                         height: 100%;
                         justify-content: center;
                         padding: 0px;
-                        transition: transform 0.3s ease, box-shadow 0.3s ease;
+                        transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.2s ease;
     
                         &:hover {
                             transform: translateY(-6px);

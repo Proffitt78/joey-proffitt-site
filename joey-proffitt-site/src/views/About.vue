@@ -15,7 +15,7 @@
       <!-- Bio -->
       <section class="bio-text">
         <p>
-          Hi, I’m <strong>Joey Proffitt</strong> — a front-end focused full-stack developer with a passion for creating clean, responsive, and user-friendly web applications. For more than 15 years, I’ve been honing my craft in web technologies, from the foundations of <strong>HTML, CSS, and JavaScript</strong> to modern frameworks like <strong>Vue.js</strong> and <strong>TypeScript</strong>, and full-stack tools like <strong>C#, REST APIs, and SQL</strong>.
+          Hi, I’m <strong>Joey Proffitt</strong>, a front-end focused full-stack developer with a passion for creating clean, responsive, and user-friendly web applications. For more than 15 years, I’ve been honing my craft in web technologies, from the foundations of <strong>HTML, CSS, and JavaScript</strong> to modern frameworks like <strong>Vue.js</strong> and <strong>TypeScript</strong>, and full-stack tools like <strong>C#, REST APIs, and SQL</strong>.
         </p>
         <p>
           I enjoy building software that not only works seamlessly but also looks and feels polished. Over the years, I’ve specialized in <strong>responsive design</strong>, making sure that applications adapt beautifully to any device. This very site was built using <strong>Vue 3, TypeScript, Pinia, and Vite</strong>, backed by a <strong>C# and Entity Framework Core API</strong> hosted in <strong>Azure</strong>.
@@ -24,7 +24,7 @@
           Beyond the technical side, I bring strong skills in <strong>problem-solving, collaboration, and communication</strong>, which have been essential in both team-based and freelance projects. I love breaking down complex problems, finding efficient solutions, and working closely with others to deliver results.
         </p>
         <p>
-          Outside of development, I’ve always been a creative — tinkering with <strong>Photoshop, Illustrator, and Premiere</strong> since the late 90s. That background gives me an eye for design and detail, which complements my engineering work.
+          Outside of development, I’ve always been a creative, tinkering with <strong>Photoshop, Illustrator, and Premiere</strong> since the late 90s. That background gives me an eye for design and detail, which complements my engineering work.
         </p>
         <p>
           At the end of the day, I’m driven by curiosity, creativity, and the satisfaction of building something meaningful that people enjoy using.
