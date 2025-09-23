@@ -440,7 +440,7 @@ import JPLogo from '@/assets/icons/jp-svg.svg'
         }
     }
 
-    //////////////
+    ////// For the light effect behind the logo /////
 
     // Shared animation
     @keyframes liquidFloat {
@@ -486,7 +486,7 @@ import JPLogo from '@/assets/icons/jp-svg.svg'
         }
     }
     
-    ///////////////////////////
+    ////////// For the little lights floating up ////////////
 
     .orb-container {
         position: absolute;
@@ -525,17 +525,17 @@ import JPLogo from '@/assets/icons/jp-svg.svg'
 
     // Position random-ish
     .orb:nth-child(1) { top: 10%; left: 20%; animation-delay: 0s; }
-    .orb:nth-child(2) { top: 40%; left: 70%; animation-delay: 3s; }
-    .orb:nth-child(3) { top: 80%; left: 50%; animation-delay: 6s; }
-    .orb:nth-child(4) { top: 25%; left: 85%; animation-delay: 9s; }
-    .orb:nth-child(5) { top: 60%; left: 15%; animation-delay: 12s; }
-    .orb:nth-child(6) { top: 75%; left: 30%; animation-delay: 15s; }
-    .orb:nth-child(7) { top: 20%; left: 60%; animation-delay: 18s; }
-    .orb:nth-child(8) { top: 50%; left: 40%; animation-delay: 21s; }
-    .orb:nth-child(9) { top: 15%; left: 75%; animation-delay: 24s; }
-    .orb:nth-child(10){ top: 90%; left: 25%; animation-delay: 27s; }
-    .orb:nth-child(11){ top: 65%; left: 80%; animation-delay: 30s; }
-    .orb:nth-child(12){ top: 35%; left: 10%; animation-delay: 33s; }
+    .orb:nth-child(2) { top: 40%; left: 70%; animation-delay: 1s; }
+    .orb:nth-child(3) { top: 80%; left: 50%; animation-delay: 4s; }
+    .orb:nth-child(4) { top: 25%; left: 85%; animation-delay: 7s; }
+    .orb:nth-child(5) { top: 60%; left: 15%; animation-delay: 10s; }
+    .orb:nth-child(6) { top: 75%; left: 30%; animation-delay: 13s; }
+    .orb:nth-child(7) { top: 20%; left: 60%; animation-delay: 16s; }
+    .orb:nth-child(8) { top: 50%; left: 40%; animation-delay: 19s; }
+    .orb:nth-child(9) { top: 15%; left: 75%; animation-delay: 22s; }
+    .orb:nth-child(10){ top: 90%; left: 25%; animation-delay: 25s; }
+    .orb:nth-child(11){ top: 65%; left: 80%; animation-delay: 28s; }
+    .orb:nth-child(12){ top: 35%; left: 10%; animation-delay: 31s; }
 
     // Keyframes for appearing, drifting, fading
     @keyframes orbFloat {
