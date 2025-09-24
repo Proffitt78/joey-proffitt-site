@@ -154,7 +154,13 @@ function formatDetails(details: string | null): string {
             }
         }
 
-
+        > :nth-child(2), > :nth-child(3), > :nth-child(4) {
+            @media(min-width: 1200px) {
+                .section-header {
+                    height: 88px;
+                }
+            }
+        }
     }
     .skills-section {
         background-repeat: no-repeat;
