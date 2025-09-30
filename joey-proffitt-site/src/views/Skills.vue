@@ -11,6 +11,7 @@
                 color="primary"
                 size="64" />
             <p class="loading-text">Loading skills...<br /> This may take a minute.<br />The database, hosted by Azure, needs to be awakened.<br />(on the budget plan)</p>
+            <p>If you're reading this it's coming, I promise.</p>
         </div>
 
         <!-- Error State -->
