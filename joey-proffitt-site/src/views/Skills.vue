@@ -8,7 +8,6 @@
                     <p>The backend API I built in C# / Azure is also available if you want to see the live database in action.</p>
                     <p>The database goes to sleep and will take about a minute to wake up and deliver the data.</p>
                     <v-btn
-                        color="secondary"
                         class="mb-4"
                         variant="outlined"
                         prepend-icon="mdi-database"
@@ -416,12 +415,13 @@ function formatDetails(details: string | null): string {
 }
 
 .optional-data-loader {
-    
+
     p {
         font-size: .px(18)[@value];
     }
 
     .v-btn {
+        color: @accent-color-3;
         margin-top: 20px;
     }
 }
