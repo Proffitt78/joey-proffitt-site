@@ -1,0 +1,385 @@
+[
+    {
+        "categoryId": 1,
+        "categoryName": "Frontend",
+        "description": "Client-side technologies and frameworks",
+        "createdAt": "2025-09-13T17:55:37.08",
+        "icon": "mdi-code-tags",
+        "backgroundImage": "frontend.jpg",
+        "skills": [
+            {
+                "skillId": 1,
+                "categoryId": 1,
+                "skillName": "HTML5",
+                "icon": "mdi-language-html5",
+                "createdAt": "2025-09-13T20:46:02.1333333",
+                "details": "Strong foundation in HTML5, building modern, semantic, and accessible web pages. Skilled at leveraging HTML5 features like semantic tags, forms, multimedia, and APIs to create clean, standards-compliant markup that integrates seamlessly with CSS and JavaScript.",
+                "category": null
+            },
+            {
+                "skillId": 2,
+                "categoryId": 1,
+                "skillName": "CSS3",
+                "icon": "mdi-language-css3",
+                "createdAt": "2025-09-13T20:46:02.14",
+                "details": "Over 15 years of experience with CSS3, highly skilled in crafting responsive, cross-browser, and pixel-perfect layouts. Confident in advanced CSS techniques such as flexbox, grid, animations, and transitions. Adept at writing maintainable styles using preprocessors and design systems.",
+                "category": null
+            },
+            {
+                "skillId": 3,
+                "categoryId": 1,
+                "skillName": "JavaScript",
+                "icon": "mdi-language-javascript",
+                "createdAt": "2025-09-13T20:46:02.1433333",
+                "details": "Proficient in modern JavaScript (ES6+), with deep understanding of core concepts like closures, promises, async/await, and modular architecture. Experienced in building interactive, dynamic, and performant web applications by combining JavaScript with frameworks like Vue.js.",
+                "category": null
+            },
+            {
+                "skillId": 4,
+                "categoryId": 1,
+                "skillName": "Vue.js",
+                "icon": "mdi-vuejs",
+                "createdAt": "2025-09-13T20:46:02.1466667",
+                "details": "Extensive experience with Vue.js over the past 7 years, building applications in both Vue 2 and Vue 3. Very comfortable architecting and scaling apps using Vue's component system, reactivity model, and ecosystem tools. Vue.js has been the primary framework in professional roles, including this portfolio site built with Vue 3.",
+                "category": null
+            },
+            {
+                "skillId": 5,
+                "categoryId": 1,
+                "skillName": "TypeScript",
+                "icon": "mdi-language-typescript",
+                "createdAt": "2025-09-13T20:46:02.15",
+                "details": "Strong proficiency with TypeScript, applied throughout professional projects including this portfolio site. Comfortable leveraging TypeScript for type safety, better tooling, and reduced runtime errors. Skilled in writing strongly-typed Vue components and utilities, improving maintainability and scalability of codebases.",
+                "category": null
+            },
+            {
+                "skillId": 6,
+                "categoryId": 1,
+                "skillName": "Responsive Design",
+                "icon": "mdi-cellphone",
+                "createdAt": "2025-09-13T20:46:02.1533333",
+                "details": "Responsive design is one of my specialties, with more than 5 years of professional focus dedicated to creating seamless user experiences across devices. Skilled in fluid layouts, media queries, and mobile-first design. Every project I build, including this site, is fully responsive and optimized for accessibility and performance.",
+                "category": null
+            },
+            {
+                "skillId": 19,
+                "categoryId": 1,
+                "skillName": "Bootstrap",
+                "icon": "mdi-bootstrap",
+                "createdAt": "2025-09-17T12:05:14.3533333",
+                "details": "Experienced with Bootstrap for rapid prototyping and building consistent, responsive layouts. Skilled at leveraging Bootstrap’s grid system, components, and utility classes, while extending and customizing to meet unique design requirements.",
+                "category": null
+            },
+            {
+                "skillId": 20,
+                "categoryId": 1,
+                "skillName": "Less",
+                "icon": "mdi-less-than",
+                "createdAt": "2025-09-17T12:05:14.37",
+                "details": "Over 12 years of experience using Less for CSS preprocessing, including on this portfolio site. Comfortable structuring scalable and maintainable styles using variables, mixins, and nesting to streamline development and enforce consistency.",
+                "category": null
+            },
+            {
+                "skillId": 21,
+                "categoryId": 1,
+                "skillName": "Sass",
+                "icon": "mdi-sass",
+                "createdAt": "2025-09-17T12:05:14.3733333",
+                "details": "Skilled with Sass for creating scalable, maintainable, and DRY stylesheets. Experienced in structuring large codebases with partials, variables, and advanced mixins. Confident in integrating Sass into build processes for modern web apps.",
+                "category": null
+            },
+            {
+                "skillId": 22,
+                "categoryId": 1,
+                "skillName": "React",
+                "icon": "mdi-react",
+                "createdAt": "2025-09-17T12:05:14.3766667",
+                "details": "Hands-on experience with React, building interactive UI components and single-page applications. Familiar with React hooks, JSX, and state management patterns. While Vue.js has been the primary focus of professional roles, React projects have strengthened adaptability across modern frontend frameworks.",
+                "category": null
+            },
+            {
+                "skillId": 34,
+                "categoryId": 1,
+                "skillName": "Vite",
+                "icon": "mdi-flash",
+                "createdAt": "2025-09-18T21:58:12.32",
+                "details": "This site is built with Vite, taking advantage of its lightning-fast development server and optimized production builds. Comfortable configuring and extending Vite to streamline modern frontend development workflows.",
+                "category": null
+            },
+            {
+                "skillId": 35,
+                "categoryId": 1,
+                "skillName": "Vue CLI",
+                "icon": "mdi-vuejs",
+                "createdAt": "2025-09-18T21:58:12.32",
+                "details": "Experienced with Vue CLI for scaffolding and managing Vue.js applications prior to the adoption of Vite. Skilled at configuring plugins, build processes, and project structures to accelerate Vue development.",
+                "category": null
+            },
+            {
+                "skillId": 36,
+                "categoryId": 1,
+                "skillName": "Axios",
+                "icon": "mdi-link-variant",
+                "createdAt": "2025-09-18T21:58:12.32",
+                "details": "Proficient in using Axios for API communication in modern web applications. Skilled at handling RESTful requests, interceptors, and error handling to ensure robust data flow between frontend and backend services.",
+                "category": null
+            },
+            {
+                "skillId": 37,
+                "categoryId": 1,
+                "skillName": "Pinia",
+                "icon": "mdi-package-variant",
+                "createdAt": "2025-09-18T21:58:12.32",
+                "details": "This site is powered by Pinia, Vue’s next-generation state management library. Experienced at organizing and managing application state with Pinia, building clean, scalable stores that integrate seamlessly with Vue 3.",
+                "category": null
+            }
+        ]
+    },
+    {
+        "categoryId": 2,
+        "categoryName": "Backend",
+        "description": "Server-side development and APIs",
+        "createdAt": "2025-09-13T17:55:37.08",
+        "icon": "mdi-server",
+        "backgroundImage": "backend.jpg",
+        "skills": [
+            {
+                "skillId": 7,
+                "categoryId": 2,
+                "skillName": "C#",
+                "icon": "mdi-language-csharp",
+                "createdAt": "2025-09-13T20:46:02.1566667",
+                "details": "This site is built with C#, leveraging the .NET ecosystem for backend logic and services. Strong experience designing and implementing robust server-side applications using modern C# features and best practices.",
+                "category": null
+            },
+            {
+                "skillId": 8,
+                "categoryId": 2,
+                "skillName": "REST APIs",
+                "icon": "mdi-api",
+                "createdAt": "2025-09-13T20:46:02.16",
+                "details": "This site is powered by REST APIs I built in C#, designed for clear, scalable communication between the frontend and backend. Skilled in building RESTful endpoints, handling authentication, and ensuring performance and reliability.",
+                "category": null
+            },
+            {
+                "skillId": 23,
+                "categoryId": 2,
+                "skillName": "Unit Testing",
+                "icon": "mdi-test-tube",
+                "createdAt": "2025-09-17T12:05:14.38",
+                "details": "Experienced in writing and maintaining unit tests to ensure code quality and long-term reliability. Skilled with testing frameworks and methodologies that help catch issues early and provide confidence when refactoring or scaling applications.",
+                "category": null
+            },
+            {
+                "skillId": 24,
+                "categoryId": 2,
+                "skillName": "Entity Framework Core",
+                "icon": "mdi-database-cog-outline",
+                "createdAt": "2025-09-17T12:05:14.38",
+                "details": "This site uses Entity Framework Core as its ORM, enabling seamless interaction with the database. Proficient in designing models, configuring relationships, and optimizing queries using EF Core for clean and efficient data access.",
+                "category": null
+            },
+            {
+                "skillId": 25,
+                "categoryId": 2,
+                "skillName": "PHP",
+                "icon": "mdi-language-php",
+                "createdAt": "2025-09-17T12:05:14.3833333",
+                "details": "Professional experience using PHP to build and maintain web applications. Skilled in integrating PHP with frontend technologies and databases to deliver dynamic, data-driven user experiences.",
+                "category": null
+            }
+        ]
+    },
+    {
+        "categoryId": 3,
+        "categoryName": "Databases",
+        "description": "Database management and querying",
+        "createdAt": "2025-09-13T17:55:37.08",
+        "icon": "mdi-database",
+        "backgroundImage": "database.jpg",
+        "skills": [
+            {
+                "skillId": 9,
+                "categoryId": 3,
+                "skillName": "SQL",
+                "icon": "mdi-database-search",
+                "createdAt": "2025-09-13T20:46:02.16",
+                "details": "Strong foundation in SQL for querying, analyzing, and managing data. Skilled in writing complex queries, joins, and stored procedures to support business logic and reporting needs.",
+                "category": null
+            },
+            {
+                "skillId": 10,
+                "categoryId": 3,
+                "skillName": "CRUD Operations",
+                "icon": "mdi-database-cog",
+                "createdAt": "2025-09-13T20:46:02.1666667",
+                "details": "Experienced in designing and implementing full CRUD (Create, Read, Update, Delete) operations as part of web applications. This site’s backend demonstrates these operations through its API and database integration.",
+                "category": null
+            },
+            {
+                "skillId": 26,
+                "categoryId": 3,
+                "skillName": "PostgreSQL",
+                "icon": "mdi-database",
+                "createdAt": "2025-09-17T12:05:14.3866667",
+                "details": "Hands-on experience with PostgreSQL for building and managing relational databases. Proficient in schema design, optimization, and writing queries tailored for PostgreSQL’s advanced features.",
+                "category": null
+            },
+            {
+                "skillId": 27,
+                "categoryId": 3,
+                "skillName": "MySQL",
+                "icon": "mdi-database",
+                "createdAt": "2025-09-17T12:05:14.39",
+                "details": "Experience working with MySQL in both professional and personal projects. Comfortable setting up databases, designing schemas, and writing queries to power web applications.",
+                "category": null
+            }
+        ]
+    },
+    {
+        "categoryId": 4,
+        "categoryName": "Tools & Platforms",
+        "description": "Development tools, cloud services, and collaboration platforms",
+        "createdAt": "2025-09-13T17:55:37.08",
+        "icon": "mdi-wrench",
+        "backgroundImage": "tools.jpg",
+        "skills": [
+            {
+                "skillId": 11,
+                "categoryId": 4,
+                "skillName": "Git & GitHub",
+                "icon": "mdi-github",
+                "createdAt": "2025-09-13T20:46:02.17",
+                "details": "Proficient with Git for version control and GitHub for collaboration and hosting. This site itself is version-tracked and published through GitHub, demonstrating practical, real-world usage.",
+                "category": null
+            },
+            {
+                "skillId": 12,
+                "categoryId": 4,
+                "skillName": "Azure",
+                "icon": "mdi-microsoft-azure",
+                "createdAt": "2025-09-13T20:46:02.17",
+                "details": "Experience deploying and hosting modern web applications using Microsoft Azure. This portfolio site is currently hosted on Azure, showcasing my ability to work with cloud-based environments.",
+                "category": null
+            },
+            {
+                "skillId": 13,
+                "categoryId": 4,
+                "skillName": "Figma",
+                "icon": "mdi-draw",
+                "createdAt": "2025-09-13T20:46:02.1733333",
+                "details": "Skilled with Figma for UI/UX design and prototyping. Experienced in turning mockups into functional, responsive applications and collaborating with teams through design systems.",
+                "category": null
+            },
+            {
+                "skillId": 14,
+                "categoryId": 4,
+                "skillName": "Adobe Photoshop",
+                "icon": "mdi-image-edit",
+                "createdAt": "2025-09-13T20:46:02.1766667",
+                "details": "Extensive experience with Adobe Photoshop, dating back to 1998 through personal and freelance projects. While not a primary tool in professional roles, I consider myself highly proficient and capable of producing polished, professional designs.",
+                "category": null
+            },
+            {
+                "skillId": 28,
+                "categoryId": 4,
+                "skillName": "SSMS",
+                "icon": "mdi-database",
+                "createdAt": "2025-09-17T12:05:14.3933333",
+                "details": "Proficient in using SQL Server Management Studio (SSMS) for database management, query execution, and performance monitoring. This site’s database is actively managed through SSMS.",
+                "category": null
+            },
+            {
+                "skillId": 29,
+                "categoryId": 4,
+                "skillName": "Adobe XD",
+                "icon": "mdi-pen",
+                "createdAt": "2025-09-17T12:05:14.3966667",
+                "details": "Proficient with Adobe XD for designing and prototyping user interfaces. Experienced in translating wireframes and mockups into functional, responsive applications.",
+                "category": null
+            },
+            {
+                "skillId": 30,
+                "categoryId": 4,
+                "skillName": "Adobe Illustrator",
+                "icon": "mdi-vector-combine",
+                "createdAt": "2025-09-17T12:05:14.4033333",
+                "details": "Skilled in Adobe Illustrator for vector graphics, logos, and scalable design work. Comfortable creating clean, professional visuals that complement web and digital projects.",
+                "category": null
+            },
+            {
+                "skillId": 31,
+                "categoryId": 4,
+                "skillName": "Visual Studio",
+                "icon": "mdi-microsoft-visual-studio",
+                "createdAt": "2025-09-17T12:05:14.4066667",
+                "details": "Extensive experience with Microsoft Visual Studio as the primary IDE for C# development. Used daily in building applications, REST APIs, and managing Entity Framework Core integrations.",
+                "category": null
+            },
+            {
+                "skillId": 32,
+                "categoryId": 4,
+                "skillName": "Visual Studio Code",
+                "icon": "mdi-microsoft-visual-studio-code",
+                "createdAt": "2025-09-17T12:05:14.41",
+                "details": "Highly proficient with Visual Studio Code for frontend development. This site was built using VS Code, showcasing efficiency with extensions, debugging tools, and a streamlined workflow.",
+                "category": null
+            },
+            {
+                "skillId": 33,
+                "categoryId": 4,
+                "skillName": "Adobe Premiere",
+                "icon": "mdi-video",
+                "createdAt": "2025-09-17T12:05:14.41",
+                "details": "Experienced in Adobe Premiere for video editing and production. While not the main focus of my professional career, I am fully capable of producing polished video content for personal and professional projects.",
+                "category": null
+            }
+        ]
+    },
+    {
+        "categoryId": 5,
+        "categoryName": "Soft Skills",
+        "description": "Professional and interpersonal skills",
+        "createdAt": "2025-09-13T17:55:37.08",
+        "icon": "mdi-account-group",
+        "backgroundImage": "softskills.jpg",
+        "skills": [
+            {
+                "skillId": 15,
+                "categoryId": 5,
+                "skillName": "Problem-Solving",
+                "icon": "mdi-lightbulb",
+                "createdAt": "2025-09-13T20:46:02.18",
+                "details": "Strong problem-solving skills developed over years of tackling complex coding challenges and building scalable web applications. Able to break down issues, identify solutions, and deliver results efficiently.",
+                "category": null
+            },
+            {
+                "skillId": 16,
+                "categoryId": 5,
+                "skillName": "Team Collaboration",
+                "icon": "mdi-handshake",
+                "createdAt": "2025-09-13T20:46:02.1833333",
+                "details": "Proven ability to collaborate effectively in cross-functional teams. Experienced in pair programming, code reviews, and working closely with designers, product managers, and stakeholders to achieve project goals.",
+                "category": null
+            },
+            {
+                "skillId": 17,
+                "categoryId": 5,
+                "skillName": "Communication",
+                "icon": "mdi-message-text",
+                "createdAt": "2025-09-13T20:46:02.1866667",
+                "details": "Clear and professional communicator, both written and verbal. Skilled at documenting processes, explaining technical concepts to non-technical audiences, and contributing to productive discussions.",
+                "category": null
+            },
+            {
+                "skillId": 18,
+                "categoryId": 5,
+                "skillName": "Time Management",
+                "icon": "mdi-clock",
+                "createdAt": "2025-09-13T20:46:02.19",
+                "details": "Excellent time management skills, with the ability to balance multiple priorities and meet deadlines without sacrificing quality. Experienced in agile workflows and self-directed project management.",
+                "category": null
+            }
+        ]
+    }
+]
