@@ -2,7 +2,22 @@
     <v-container class="skills-page">
         <PageHeader 
             title="Skills" 
-            description="The skills below are powered by a backend API I built in C# and hosted in Azure." />
+            description="Skills data is loaded instantly from a local source. ">
+            <slot>
+                <div class="optional-data-loader">
+                    <p>The backend API I built in C# / Azure is also available if you want to see the live database in action.</p>
+                    <p>The database goes to sleep and will take about a minute to wake up and deliver the data.</p>
+                    <v-btn
+                        color="secondary"
+                        class="mb-4"
+                        variant="outlined"
+                        prepend-icon="mdi-database"
+                        @click="skillsStore.fetchSkillsDB()">
+                        Load Live Data (From Backend)
+                    </v-btn>
+                </div>
+            </slot>
+        </PageHeader>
 
         <!-- Loading Indicator -->
         <div v-if="loading" class="loading-wrap">
@@ -396,6 +411,18 @@ function formatDetails(details: string | null): string {
 
     .v-card-actions {
         color: @primary-color;
+    }
+
+}
+
+.optional-data-loader {
+    
+    p {
+        font-size: .px(18)[@value];
+    }
+
+    .v-btn {
+        margin-top: 20px;
     }
 }
 </style>
