@@ -417,7 +417,23 @@ function formatDetails(details: string | null): string {
 .optional-data-loader {
 
     p {
-        font-size: .px(18)[@value];
+        font-size: .px(13)[@value];
+
+        @media(min-width: 576px) {
+            font-size: .px(14)[@value];
+        }
+
+        @media(min-width: 768px) {
+            font-size: .px(16)[@value];
+        }
+
+        @media(min-width: 992px) {
+            font-size: .px(16)[@value];
+        }
+
+        @media(min-width: 1200px) {
+            font-size: .px(20)[@value];
+        }
     }
 
     .v-btn {
