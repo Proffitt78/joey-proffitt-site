@@ -37,7 +37,7 @@
         </section>
         <section aria-labelledby="personal-heading">
           <h4 id="personal-heading">Being myself</h4>
-          <p>Cannopi is for the cannabis community, and I use cannabis responsibly myself. I don’t drink.</p>
+          <p>Cannopi is for the cannabis community, and I use cannabis responsibly myself.</p>
           <p>I’m open about that. If my cannabis use is a problem for an employer, we’re not a good fit. I want to work somewhere I can be myself.</p>
         </section>
         <section aria-labelledby="schedule-heading">
