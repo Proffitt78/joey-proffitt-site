@@ -12,7 +12,7 @@
         </p>
         <div class="intro-actions">
           <v-btn :to="{ path: '/', hash: '#projects' }" class="primary-action" size="large" append-icon="mdi-arrow-down">Explore Cannopi</v-btn>
-          <v-btn href="/resume/JProffitt-Resume.pdf" target="_blank" rel="noopener noreferrer" variant="outlined" size="large" prepend-icon="mdi-file-document-outline">View resume</v-btn>
+          <v-btn href="/resume/JProffitt-Resume-Designed.pdf" target="_blank" rel="noopener noreferrer" variant="outlined" size="large" prepend-icon="mdi-file-document-outline">View resume</v-btn>
         </div>
         <p class="work-location">Remote preferred. Open to hybrid in Chesapeake, Virginia Beach, or Norfolk, Virginia.</p>
       </div>
@@ -26,7 +26,7 @@
       <a href="mailto:joeyproffitt78@gmail.com">joeyproffitt78@gmail.com</a>
       <a href="tel:+17579106909">(757) 910-6909</a>
       <a href="https://www.linkedin.com/in/joey-proffitt-1b05b7108" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
-      <a href="/resume/JProffitt-Resume.pdf" download>Download resume ↓</a>
+      <a href="/resume/JProffitt-Resume-Designed.pdf" download>Download resume ↓</a>
     </div>
   </v-container>
 </template>

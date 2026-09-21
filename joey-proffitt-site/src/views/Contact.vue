@@ -18,7 +18,7 @@
       </div>
       <div class="info-item">
         <v-icon>mdi-file-document</v-icon>
-        <a href="/resume/JProffitt-Resume.pdf" target="_blank" download>Download Resume</a>
+        <a href="/resume/JProffitt-Resume-Designed.pdf" target="_blank" download>Download Resume</a>
       </div>
     </section>
 
