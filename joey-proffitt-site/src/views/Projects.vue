@@ -24,7 +24,7 @@
           <h4>Why I built it</h4>
           <p>After eight years working for the government, my job ended.
             The projects I’d worked on weren’t things I could publicly show.
-            Cannopi gave me something of my own to build—and something I can share.</p>
+            Cannopi gave me something of my own to build and something I can share.</p>
         </div>
         <div>
           <h4>How I approached it</h4>
