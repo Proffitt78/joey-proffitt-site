@@ -22,8 +22,14 @@ export const cannopiScreenshots: CannopiScreenshot[] = [
   },
   {
     id: 'feed-filters',
-    src: '/images/cannopi/feed-screenshot.png',
-    alt: 'Cannopi feed showing photo posts, post-type filters, trending topics, and cannabis news.',
-    caption: 'Photo posts and feed filters',
+    src: '/images/cannopi/breeder-profile-screenshot.png',
+    alt: 'Verified breeder profile page',
+    caption: 'Verifiable breeder profiles',
+  },
+  {
+    id: 'discover-strains',
+    src: '/images/cannopi/discover-strains.png',
+    alt: 'Cannopi Discover Strains page',
+    caption: 'Discover cannabis strains',
   },
 ]
