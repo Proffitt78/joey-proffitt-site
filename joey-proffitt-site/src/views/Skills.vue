@@ -1,444 +1,93 @@
 <template>
-    <v-container class="skills-page">
-        <PageHeader 
-            title="Skills" 
-            description="Skills data is loaded instantly from a local source. ">
-            <slot>
-                <div class="optional-data-loader">
-                    <p>The backend API I built in C# / Azure is also available if you want to see the live database in action.</p>
-                    <p>The database goes to sleep and will take about a minute to wake up and deliver the data.</p>
-                    <v-btn
-                        class="mb-4"
-                        variant="outlined"
-                        prepend-icon="mdi-database"
-                        @click="skillsStore.fetchSkillsDB()">
-                        Load Live Data (From Backend)
-                    </v-btn>
-                </div>
-            </slot>
-        </PageHeader>
-
-        <!-- Loading Indicator -->
-        <div v-if="loading" class="loading-wrap">
-            <v-progress-circular
-                indeterminate
-                color="primary"
-                size="64" />
-            <p class="loading-text">Loading skills...<br /> This may take a minute.<br />The database, hosted by Azure, needs to be awakened.<br />(on the budget plan)</p>
-            <p>If you're reading this it's coming, I promise.</p>
-        </div>
-
-        <!-- Error State -->
-        <div v-else-if="error" class="error-wrap">
-            <v-alert type="error" title="Oops!">
-                {{ error }}
-            </v-alert>
-            <div class="retry-wrap">
-                <p>The data required for this section did not load.<br />Click the button to try again.</p>
-                <v-btn 
-                    variant="elevated" 
-                    prepend-icon="mdi-refresh" 
-                    @click="skillsStore.fetchSkills()">
-                    Try Again
-                </v-btn>
-            </div>
-        </div>
-
-        <div v-else class="categories-wrap">
-            <section
-                v-for="(group, index) in categories"
-                :key="group.categoryId"
-                class="skills-section"
-                :class="index % 2 === 0 ? 'alt-bg' : ''">
-                <div class="section-header" data-aos="fade-up">
-                    <div>
-                        <v-icon>{{ group.icon }}</v-icon>
-                    </div>
-                    <div>
-                        <h2>{{ group.categoryName }}</h2>
-                        <div class="skill-description">{{ group.description }}</div>
-                    </div>
-                </div>
-        
-                <v-container>
-                    <v-row class="skills-row">
-                        <div
-                            class="card-holder"
-                            v-for="(skill, idx) in group.skills"
-                            :key="skill.skillId">
-                            <v-card
-                                class="pa-4 text-center skill-card"
-                                elevation="3"
-                                data-aos="fade-up"
-                                :data-aos-delay="idx * 100">
-                                <v-icon size="36">{{ skill.icon }}</v-icon>
-                                <div>{{ skill.skillName }}</div>
-                                <v-dialog 
-                                    activator="parent"
-                                    max-width="500"
-                                    class="skill-details-dialog">
-                                    <template v-slot:default="{ isActive }">
-                                        <v-card>
-                                            <v-card-title :style="{backgroundImage: group.backgroundImage ? `url(/images/${group.backgroundImage})` : 'none'}">
-                                                <div class="skill-name-wrap d-flex align-top" >
-                                                    <div class="icon-text-wrap">
-                                                        <v-icon size="28" class="mr-2">{{ skill.icon }}</v-icon>
-                                                        <span class="text-h6">{{ skill.skillName }}</span>
-                                                    </div>
-                                                    <v-spacer></v-spacer>
-                                                    <v-btn icon="mdi-close" variant="text" @click="isActive.value = false"></v-btn>
-                                                </div>
-                                                <div class="group-name">
-                                                    <h2><v-icon>{{ group.icon }}</v-icon><span>{{ group.categoryName }}</span></h2>
-                                                </div>
-                                            </v-card-title>
-
-                                            <v-card-text>
-                                                <!-- Render rich text / formatted details -->
-                                                <div class="skill-details" v-html="formatDetails(skill.details)"></div>
-                                            </v-card-text>
-
-                                            <v-card-actions>
-                                                <v-spacer></v-spacer>
-                                                <v-btn text="Close" @click="isActive.value = false"></v-btn>
-                                            </v-card-actions>
-                                        </v-card>
-                                    </template>
-                                </v-dialog>
-                            </v-card>
-                        </div>
-                    </v-row>
-                </v-container>
-            </section>
-        </div>
-
-    </v-container>
+  <v-container class="skills-page">
+    <header class="skills-heading">
+      <p class="eyebrow">Skills</p>
+      <h2 id="skills-heading">What I bring to the work.</h2>
+      <p class="section-intro">My strongest area is frontend development. These are the skills I build on, from the interface to the backend.</p>
+    </header>
+    <section v-for="group in focusedSkills" :key="group.id" class="skill-group" :aria-labelledby="`skills-${group.id}`">
+      <div class="group-heading">
+        <h3 :id="`skills-${group.id}`">{{ group.title }}</h3>
+        <p>{{ group.description }}</p>
+      </div>
+      <ul class="skill-grid">
+        <li v-for="skill in group.skills" :key="skill.name" class="skill-card">
+          <v-icon class="skill-icon" aria-hidden="true">{{ skill.icon }}</v-icon>
+          <h4>{{ skill.name }}</h4>
+          <p>{{ skill.description }}</p>
+        </li>
+      </ul>
+    </section>
+    <p class="skills-evidence">Want to see the work behind the list? <RouterLink :to="{ path: '/', hash: '#projects' }">Explore Cannopi <span aria-hidden="true">↑</span></RouterLink></p>
+  </v-container>
 </template>
 
 <script setup lang="ts">
-import { onMounted } from "vue";
-import { storeToRefs } from "pinia";
-import { useSkillsStore } from "@/stores/skills";
-import PageHeader from '@/components/PageHeader.vue';
-
-const skillsStore = useSkillsStore();
-const { categories, loading, error} = storeToRefs(skillsStore);
-
-onMounted(() => {
-  skillsStore.fetchSkills();
-});
-
-function formatDetails(details: string | null): string {
-  if (!details) return "";
-  // Convert line breaks into <p> blocks
-  return details
-    .split(/\n+/)
-    .map(line => `<p>${line.trim()}</p>`)
-    .join("");
-}
-
+import { RouterLink } from 'vue-router'
+import { focusedSkills } from '@/data/focusedSkills'
 </script>
 
-<style lang="less" scoped>
+<style scoped lang="less">
 @import '../css/variables.less';
-
-.skills-page {
-    .categories-wrap {
-        display: grid;
-        grid-template-columns: 1fr;
-
-        @media(min-width: 768px) {
-            grid-template-columns: 1fr 1fr;
-            column-gap: 10px;
-
-            .skills-section:first-child {
-                grid-column: span 2;
-            }
-        }
-
-        @media(min-width: 1200px) {
-            grid-template-columns: 1fr 1fr 1fr;
-            column-gap: @gutter;
-
-            .skills-section:first-child {
-                grid-column: span 3;
-            }
-
-            .skills-section:last-child {
-                grid-column: span 3;
-            }
-        }
-
-        > :nth-child(2), > :nth-child(3), > :nth-child(4) {
-            @media(min-width: 1200px) {
-                .section-header {
-                    height: 88px;
-                }
-            }
-        }
-    }
-    .skills-section {
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
-        border-bottom: 12px solid @accent-color-3;
-        border-top: 5px solid @accent-color-3;
-        border-radius: 16px;
-        margin-bottom: 60px;
-        overflow: hidden;
-        padding: 20px 0;
-        position: relative;
-
-        @media(min-width: 1200px) {
-            padding: 40px 0;            
-        }
-
-        // dark gradient overlay to ensure text visibility
-        &::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(
-                fade(@secondary-color, 20%),
-                fade(@primary-color, 30%)
-            );
-            z-index: 0;
-        }
-
-        .section-header {
-            background-color: fade(@accent-color-2, 80%);
-            color: #fff;
-            column-gap: 5px;
-            display: flex;
-            justify-content: flex-start;
-            margin: 0 auto 40px auto;
-            padding: 10px 20px;
-            z-index: 1;
-
-
-
-            >div {
-
-                .v-icon {
-                    font-size: .px(40)[@value];
-                    margin: 0;
-                    color: @tertiary-color;
-    
-                    &.mdi-code-tags{
-                        position: relative;
-                        top: -7px
-                    }
-
-                    &.mdi-database{
-                        position: relative;
-                        top: -4px
-                    }
-
-                    &.mdi-account-group{
-                        position: relative;
-                        top: -7px
-                    }
-                }
-            }
-
-            h2 {
-                align-items: center;
-                display: flex;
-                font-weight: 700;
-                font-size: .px(32)[@value];
-                line-height: 1;
-                margin: 0;
-
-
-                span {
-                    position: relative;
-                    top: 3px;
-                }
-            }
-
-            .skill-description {
-                font-family: RoundedLight, Avenir, Helvetica, Arial, sans-serif;
-                font-size: .px(14)[@value];
-                line-height: 1.1;
-                padding-left: 8px;
-                font-weight: 100;
-                opacity: 0.9;
-
-                @media(min-width: 1200px) {
-                    font-size: .px(16)[@value];
-                }
-            }
-        }
-
-        .v-container {
-            position: relative;
-            z-index: 1;
-            
-            .skills-row {
-                justify-content: center;
-                gap: 10px;
-
-                @media(min-width: 1200px) {
-                    gap: @gutter;
-                }
-    
-                .card-holder {                
-                    width: 130px;
-
-                    @media(min-width: 768px) {
-                        width: 162px;
-                    }
-    
-                    .v-card {
-                        align-items: center;
-                        backdrop-filter: blur(6px);
-                        background-color: darken(@accent-color-1, 40%);
-                        border: 5px solid lighten(@accent-color-3, 20%);        
-                        border-radius: 12px;
-                        color: lighten(@accent-color-3, 20%);
-                        cursor: pointer;
-                        display: flex;
-                        flex-direction: column;
-                        font-size: .px(14)[@value];
-                        height: 100%;
-                        justify-content: center;
-                        padding: 0px;
-                        transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.2s ease;
-    
-                        &:hover {
-                            transform: translateY(-6px);
-                            box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.2);
-                            background-color: @tertiary-color;
-                            color: darken(@accent-color-1, 40%);
-
-                            .v-icon {
-                                color: darken(@accent-color-1, 40%);
-                            }
-                        }
-    
-                        @media (min-width: 768px) {
-                            border: 5px solid lighten(@accent-color-3, 20%);
-                        }
-
-                        @media(min-width: 992px) {
-                            font-size: .px(16)[@value];
-                        }
-        
-                        .v-icon {
-                            font-size: .px(36)[@value];
-                            color: lighten(@accent-color-3, 20%);;
-                        }
-    
-                        .text-subtitle-1 {
-                            margin-top: 10px;
-                            font-weight: 500;
-                        }
-                    }
-                }
-            }
-        }
-    }
+.skills-page { padding: 0 24px; }
+.eyebrow { color: lighten(@accent-color-3, 22%); font-size: .9rem; letter-spacing: .08em; margin-bottom: 12px; }
+.skills-heading {
+  margin-bottom: 36px;
+  h2 { font-size: clamp(1.6rem, 3vw, 2.4rem); line-height: 1.25; }
 }
-</style>
-<style lang="less">
-@import '../css/variables.less';
-.skill-details-dialog {
-    background-color: fade(@primary-color, 90%);
-
-    .v-card {
-        background-color: lighten(@secondary-color, 30%);
-        // border-left: 2px solid @accent-color-3;
-        // border-right: 2px solid @accent-color-3;
-        color: #fff;
-
-        .v-card-title {
-            background-color: @accent-color-2;
-            padding: 10px 0px 10px;
-            background-repeat: no-repeat;
-            background-size: cover;
-
-            .skill-name-wrap {
-
-                .icon-text-wrap {
-                    background-color: fade(@accent-color-2, 90%);
-                    border-top: 2px solid @tertiary-color;
-                    margin-top: 20px;
-                    padding: 49px;
-                }
-
-                .v-btn {
-                    background-color: @primary-color;
-                    margin-right: 10px;
-                }
-            }
-
-
-            .group-name {
-                padding: 10px 20px 0 0;
-                text-align: right;
-
-                h2{
-                    display: flex;
-                    align-items: center;
-                    font-size: .px(20)[@value];
-                    justify-content: flex-end;
-                    line-height: 1;
-
-                    .v-icon {
-                        font-size: .px(20)[@value];
-                    }
-
-                    span {
-                        line-height: 1;
-                        display: inline-block;
-                    }
-                }
-            }
-        }
-    }
-
-    .skill-details {
-        background-color: lighten(@secondary-color, 40%);
-        color: @primary-color;
-        padding: 30px;
-    
-        p {
-            margin-bottom: 0.75rem;
-            line-height: 1.5;
-        }
-    }
-
-    .v-card-actions {
-        color: @primary-color;
-    }
-
+.section-intro, .group-heading p, .skill-card p, .skills-evidence {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  color: #ded9e4;
+  font-size: 1rem;
+  line-height: 1.7;
 }
-
-.optional-data-loader {
-
-    p {
-        font-size: .px(13)[@value];
-
-        @media(min-width: 576px) {
-            font-size: .px(14)[@value];
-        }
-
-        @media(min-width: 768px) {
-            font-size: .px(16)[@value];
-        }
-
-        @media(min-width: 992px) {
-            font-size: .px(16)[@value];
-        }
-
-        @media(min-width: 1200px) {
-            font-size: .px(20)[@value];
-        }
-    }
-
-    .v-btn {
-        color: @accent-color-3;
-        margin-top: 20px;
-    }
+.section-intro { margin-top: 16px; max-width: 68ch; }
+.skill-group + .skill-group { margin-top: 32px; }
+.group-heading {
+  margin-bottom: 16px;
+  h3 { font-size: 1.25rem; margin-bottom: 4px; color: lighten(@accent-color-3, 22%); }
+  p { font-size: .9375rem; }
+}
+.skill-grid {
+  list-style: none;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 16px;
+  @media (min-width: 900px) { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+.skill-card {
+  background: fade(@primary-color, 75%);
+  border: 1px solid fade(@secondary-color, 40%);
+  border-radius: 16px;
+  padding: 24px;
+  transition: transform .22s ease, border-color .22s ease, box-shadow .22s ease, background-color .22s ease;
+  .skill-icon { color: lighten(@accent-color-3, 22%); font-size: 30px; margin-bottom: 16px; }
+  h4 { font-size: 1.125rem; line-height: 1.35; margin-bottom: 10px; }
+  p { font-size: .9375rem; }
+}
+.skills-evidence {
+  border-top: 1px solid fade(@secondary-color, 40%);
+  margin-top: 32px;
+  padding-top: 24px;
+  a {
+    display: inline-block;
+    color: lighten(@accent-color-3, 25%);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    &:hover { color: #fff; background: transparent; }
+    &:focus-visible { outline: 2px solid @accent-color-3; outline-offset: 4px; }
+  }
+}
+@media (hover: hover) and (pointer: fine) {
+  .skill-card:hover {
+    transform: translateY(-4px);
+    border-color: lighten(@accent-color-3, 10%);
+    background-color: fade(@primary-color, 92%);
+    box-shadow: 0 10px 24px fade(@primary-color, 30%);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .skill-card { transition: none; }
+  .skill-card:hover { transform: none; }
 }
 </style>

@@ -1,12 +1,12 @@
 <template>
   <div class="text-center mb-10" data-aos="fade-down">
-    <h1 class="main-section-header">{{ title }}</h1>
+    <h2 class="main-section-header">{{ title }}</h2>
 
     <div class="page-description" v-if="description">
       <p>{{ description }}</p>
     </div>
 
-    <!-- Slot for custom extra content if needed fool -->
+    <!-- Optional supporting content -->
     <slot></slot>
   </div>
 </template>

@@ -5,10 +5,13 @@
             <section id="landing" class="main-section">
                 <HomePage />
             </section>
-            <section id="skills" class="main-section">
+            <section id="projects" class="main-section" aria-labelledby="projects-heading">
+                <Projects />
+            </section>
+            <section id="skills" class="main-section" aria-labelledby="skills-heading">
                 <Skills />
             </section>
-            <section id="about" class="main-section">
+            <section id="about" class="main-section" aria-labelledby="about-heading">
                 <About />
             </section>
             <section id="contact" class="main-section">
@@ -23,6 +26,7 @@
     import AppHeader from './components/AppHeader.vue'
     import AppFooter from './components/AppFooter.vue'
     import HomePage from './views/HomePage.vue'
+    import Projects from './views/Projects.vue'
     import Skills from './views/Skills.vue'
     import Contact from './views/Contact.vue'
     import About from './views/About.vue'
@@ -32,7 +36,7 @@
 @import './css/variables.less';
 #main-container {
     // border: 30px solid red;
-    overflow-x: hidden;
+    overflow-x: clip;
 }
 .v-main {
     background-color: @page-bg-color;
@@ -73,8 +77,14 @@
     }
     
     &#landing {
+        min-height: auto;
         padding-top: 0px;
         .gradient-vertical(@primary-color, @page-bg-color);
+    }
+
+    &#projects {
+        min-height: auto;
+        padding-top: 36px;
     }
 
     &#contact {

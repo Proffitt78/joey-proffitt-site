@@ -12,7 +12,11 @@ const router = createRouter({
     },
     {
       path: '/home',
-      redirect: { path: '/', hash: '#home' }
+      redirect: { path: '/', hash: '#landing' }
+    },
+    {
+      path: '/projects',
+      redirect: { path: '/', hash: '#projects' }
     },
     {
       path: '/contact',
@@ -37,7 +41,8 @@ const router = createRouter({
     if (to.hash) {
       return {
         el: to.hash,
-        behavior: 'smooth'
+        top: to.hash === '#projects' ? 80 : 0,
+        behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'
       }
     }
     return { top: 0 }

@@ -1,5 +1,5 @@
 <template>
-  <v-footer app class="pa-4" dark>
+  <v-footer class="pa-4">
     <v-container>
         <div class="built-by">
             <p><span>Built by </span><span>Joey Proffitt</span></p>

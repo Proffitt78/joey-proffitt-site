@@ -10,8 +10,6 @@
         </RouterLink>
     </v-app-bar-title>
 
-    <!-- Spacer pushes nav items -->
-    <v-spacer />
 
     <!-- Desktop Nav -->
     <template v-if="!mobile">
@@ -28,7 +26,7 @@
 
     <!-- Mobile Nav (Hamburger) -->
     <template v-else>
-      <v-btn icon @click="drawer = !drawer">
+      <v-btn icon aria-label="Toggle navigation" :aria-expanded="drawer" aria-controls="mobile-navigation" @click="drawer = !drawer">
         <v-icon>mdi-menu</v-icon>
       </v-btn>
     </template>
@@ -36,22 +34,16 @@
 
   <!-- Drawer for mobile -->
   <v-navigation-drawer
+    id="mobile-navigation"
     v-model="drawer"
     location="right"
     temporary>
-    <v-list>
-      <v-list-item
-        v-for="link in navLinks"
-        :key="link.to"
-        :to="link.to"
-        link
-        @click="drawer = false">
-        <v-list-item-title>
-          <v-icon start>{{ link.icon }}</v-icon>
-          {{ link.label }}
-        </v-list-item-title>
-      </v-list-item>
-    </v-list>
+    <div class="mobile-links">
+      <RouterLink v-for="link in navLinks" :key="link.to" :to="link.to" @click="drawer = false">
+        <v-icon start>{{ link.icon }}</v-icon>
+        {{ link.label }}
+      </RouterLink>
+    </div>
   </v-navigation-drawer>
 </template>
 
@@ -70,6 +62,7 @@ const mobile = computed(() => smAndDown.value)
 
 // Define navigation links
 const navLinks = [
+    { label: 'Projects', to: '/projects', icon: 'mdi-application-brackets-outline' },
     { label: 'Skills', to: '/skills', icon: 'mdi-code-tags' },
     { label: 'About', to: '/about', icon: 'mdi-code-tags' },
     { label: 'Contact', to: '/contact', icon: 'mdi-email' },
@@ -78,6 +71,19 @@ const navLinks = [
 
 <style scoped lang="less">
 @import '../css/variables.less';
+
+.mobile-links {
+    padding: 12px 0;
+    a {
+        display: flex;
+        align-items: center;
+        min-height: 48px;
+        padding: 12px 20px;
+        color: #fff;
+        &:hover { background: fade(@secondary-color, 25%); }
+        &:focus-visible { outline: 2px solid @accent-color-3; outline-offset: -4px; }
+    }
+}
 
 .logo-img {
     height: 50px; /* adjust as needed */
