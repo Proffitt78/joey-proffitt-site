@@ -8,7 +8,7 @@
         <p class="intro-description">
           My strongest work is on the frontend, where design meets development.
           I also work across the backend and database. My independent work includes
-          Ammiti, a complete social platform I built and launched with AI assistance.
+          Ammiti, a complete social platform I built and launched.
         </p>
         <div class="intro-actions">
           <v-btn :to="{ path: '/', hash: '#projects' }" class="primary-action" size="large" append-icon="mdi-arrow-down">Explore Ammiti</v-btn>
