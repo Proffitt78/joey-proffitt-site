@@ -1,13 +1,13 @@
 <template>
-  <details v-if="cannopiScreenshots.length" class="cannopi-gallery" @toggle="handleToggle">
+  <details v-if="ammitiScreenshots.length" class="ammiti-gallery" @toggle="handleToggle">
     <summary>
-      <span class="summary-copy"><span class="summary-title">See inside Cannopi</span><span class="summary-description">A few screenshots. No sign-in needed.</span></span>
+      <span class="summary-copy"><span class="summary-title">See inside Ammiti</span><span class="summary-description">A few screenshots. No sign-in needed.</span></span>
       <v-icon class="disclosure-icon" aria-hidden="true">mdi-chevron-down</v-icon>
     </summary>
     <div v-if="expanded" class="gallery-content">
       <p class="gallery-intro">Select a screenshot for a closer look.</p>
       <div class="screenshot-grid">
-        <figure v-for="shot in cannopiScreenshots" :key="shot.id">
+        <figure v-for="shot in ammitiScreenshots" :key="shot.id">
           <v-dialog max-width="1100" :aria-label="shot.caption">
             <template #activator="{ props }">
               <button v-bind="props" type="button" class="screenshot-button" :aria-label="`Enlarge: ${shot.caption}`">
@@ -34,7 +34,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { cannopiScreenshots } from '@/data/cannopiScreenshots'
+import { ammitiScreenshots } from '@/data/ammitiScreenshots'
 const expanded = ref(false)
 function handleToggle(event: Event) {
   expanded.value = (event.currentTarget as HTMLDetailsElement).open
@@ -43,7 +43,7 @@ function handleToggle(event: Event) {
 
 <style scoped lang="less">
 @import '../css/variables.less';
-.cannopi-gallery {
+.ammiti-gallery {
   margin-top: 16px;
   border: 1px solid fade(@secondary-color, 45%);
   border-radius: 16px;
@@ -114,10 +114,10 @@ figcaption { margin-top: 10px; }
   .full-screenshot { display: block; width: 100%; max-height: 72vh; object-fit: contain; }
 }
 @media (hover: hover) and (pointer: fine) {
-  .cannopi-gallery summary:hover { background: fade(@secondary-color, 15%); }
+  .ammiti-gallery summary:hover { background: fade(@secondary-color, 15%); }
   .screenshot-button:hover { border-color: lighten(@accent-color-3, 20%); box-shadow: 0 6px 20px fade(@primary-color, 40%); }
 }
 @media (prefers-reduced-motion: reduce) {
-  .cannopi-gallery summary, .disclosure-icon, .screenshot-button { transition: none; }
+  .ammiti-gallery summary, .disclosure-icon, .screenshot-button { transition: none; }
 }
 </style>

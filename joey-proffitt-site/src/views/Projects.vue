@@ -4,19 +4,19 @@
       <p class="eyebrow">Selected work</p>
       <h2 id="projects-heading">From an idea to a live product.</h2>
     </div>
-    <article class="featured-project" aria-labelledby="cannopi-title">
+    <article class="featured-project" aria-labelledby="ammiti-title">
       <div class="project-overview">
         <p class="project-status"><span aria-hidden="true"></span> Live · Independently built</p>
-        <h3 id="cannopi-title">Cannopi</h3>
-        <p class="project-subtitle">A social platform for the cannabis community.</p>
+        <h3 id="ammiti-title">Ammiti</h3>
+        <p class="project-subtitle">An entire social platform, built independently.</p>
         <p class="project-description">
-          I built Cannopi myself and launched it. It’s the clearest example of
-          what I can do: take an idea, work through the problems, and turn it
-          into software people can use.
+          I designed, built, and launched Ammiti myself, with AI assistance.
+          From the interface to the backend and database, I took responsibility
+          for turning an idea into a complete social platform people can use.
         </p>
         <div class="project-actions">
-          <v-btn href="https://www.cannopi.app" target="_blank" rel="noopener noreferrer" size="large" append-icon="mdi-open-in-new">Visit Cannopi</v-btn>
-          <a href="mailto:joeyproffitt78@gmail.com?subject=Let%E2%80%99s%20talk%20about%20Cannopi">Talk through the project <span aria-hidden="true">↗</span></a>
+          <v-btn href="https://www.ammiti.com" target="_blank" rel="noopener noreferrer" size="large" append-icon="mdi-open-in-new">Visit Ammiti</v-btn>
+          <a href="mailto:joeyproffitt78@gmail.com?subject=Let%E2%80%99s%20talk%20about%20Ammiti">Talk through the project <span aria-hidden="true">↗</span></a>
         </div>
       </div>
       <div class="project-story">
@@ -24,26 +24,27 @@
           <h4>Why I built it</h4>
           <p>After eight years working for the government, my job ended.
             The projects I’d worked on weren’t things I could publicly show.
-            Cannopi gave me something of my own to build and something I can share.</p>
+            Ammiti gave me something of my own to build and something I can share.</p>
         </div>
         <div>
           <h4>How I approached it</h4>
-          <p>I use research, documentation, and tools like ChatGPT to work through
-            problems. I’m open about that. I’m responsible for the work I deliver.</p>
+          <p>I worked across the frontend, backend, and database, using research,
+            documentation, and AI tools to help work through problems. I made the
+            decisions, integrated the pieces, and took responsibility for the result.</p>
         </div>
         <div>
           <h4>Where it is now</h4>
-          <p>Cannopi is live and still growing its audience. I’m also looking for
+          <p>Ammiti is live, with profiles, posts, groups, and messaging. I’m also looking for
             a role where I can bring that same care and follow-through to a team.</p>
         </div>
       </div>
     </article>
-    <CannopiGallery />
+    <AmmitiGallery />
   </v-container>
 </template>
 
 <script setup lang="ts">
-import CannopiGallery from '@/components/CannopiGallery.vue'
+import AmmitiGallery from '@/components/AmmitiGallery.vue'
 </script>
 
 <style scoped lang="less">

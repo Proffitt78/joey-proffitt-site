@@ -18,7 +18,7 @@
         </li>
       </ul>
     </section>
-    <p class="skills-evidence">Want to see the work behind the list? <RouterLink :to="{ path: '/', hash: '#projects' }">Explore Cannopi <span aria-hidden="true">↑</span></RouterLink></p>
+    <p class="skills-evidence">Want to see the work behind the list? <RouterLink :to="{ path: '/', hash: '#projects' }">Explore Ammiti <span aria-hidden="true">↑</span></RouterLink></p>
   </v-container>
 </template>
 

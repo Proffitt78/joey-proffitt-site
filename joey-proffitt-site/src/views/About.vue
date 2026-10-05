@@ -12,7 +12,7 @@
       <div class="bio-text">
         <p>From 2013 to 2018, I worked at Dominion Enterprises on DX1, which provided websites for independent powersports dealerships. I took designs from the design team and built responsive interfaces that worked across phones, tablets, and desktops.</p>
         <p>I then spent eight years working for the government before losing my job during the DOGE cuts. Most of the work I’d done was on projects I couldn’t publicly share. I had experience, but very little I could put in front of a prospective employer.</p>
-        <p>I built this portfolio to start changing that. Then I built Cannopi—an entire social platform of my own. It gave me something concrete to show and a chance to take a product from an idea to launch.</p>
+        <p>I built this portfolio to start changing that. I also built and launched Ammiti, an entire social platform of my own, with AI assistance. It gave me something concrete to show and a chance to take a product from an idea to launch.</p>
         <p>My strongest area is the frontend, where design and development come together. I care about the details: how a page reads, how it behaves on a phone, and whether it makes sense to the person using it.</p>
         <p>Creative work has been part of my life since the late ’90s. Photoshop is my strongest creative tool. I’m also confident with Illustrator and Premiere, and I’d enjoy using those skills more.</p>
         <p class="creative-interest"><strong>I’m open to creative roles, too.</strong> I’m applying for software development positions, but I’d be excited about a role with more visual design, image editing, or video production. That’s work I’d love to grow in.</p>
@@ -37,8 +37,8 @@
         </section>
         <section aria-labelledby="personal-heading">
           <h4 id="personal-heading">Being myself</h4>
-          <p>Cannopi is for the cannabis community, and I use cannabis responsibly myself.</p>
-          <p>I’m open about that. If my cannabis use is a problem for an employer, we’re not a good fit. I want to work somewhere I can be myself.</p>
+          <p>I value honest communication, curiosity, and being comfortable asking questions.</p>
+          <p>I want to work with a team where I can contribute, keep learning, and take pride in what we build together.</p>
         </section>
         <section aria-labelledby="schedule-heading">
           <h4 id="schedule-heading">Family & work</h4>

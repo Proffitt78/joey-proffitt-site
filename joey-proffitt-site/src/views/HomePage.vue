@@ -7,11 +7,11 @@
         <p class="intro-lead">I build software people can actually use.</p>
         <p class="intro-description">
           My strongest work is on the frontend, where design meets development.
-          I also work across the backend and database. I built and launched
-          Cannopi, a social platform for the cannabis community.
+          I also work across the backend and database. My independent work includes
+          Ammiti, a complete social platform I built and launched with AI assistance.
         </p>
         <div class="intro-actions">
-          <v-btn :to="{ path: '/', hash: '#projects' }" class="primary-action" size="large" append-icon="mdi-arrow-down">Explore Cannopi</v-btn>
+          <v-btn :to="{ path: '/', hash: '#projects' }" class="primary-action" size="large" append-icon="mdi-arrow-down">Explore Ammiti</v-btn>
           <v-btn href="/resume/JProffitt-Resume-Designed.pdf" target="_blank" rel="noopener noreferrer" variant="outlined" size="large" prepend-icon="mdi-file-document-outline">View resume</v-btn>
         </div>
         <p class="work-location">Remote preferred. Open to hybrid in Chesapeake, Virginia Beach, or Norfolk, Virginia.</p>

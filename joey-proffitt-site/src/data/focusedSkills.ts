@@ -24,11 +24,11 @@ export const focusedSkills: FocusedSkillGroup[] = [
   {
     id: 'backend',
     title: 'Backend & data',
-    description: 'The backend technologies I use to power Cannopi.',
+    description: 'The backend technologies I use to build complete applications.',
     skills: [
-      { name: 'C# & REST APIs', icon: 'mdi-language-csharp', description: 'Cannopi uses backend services written in C# and REST APIs to connect its application logic to the frontend.' },
-      { name: 'SQL & Entity Framework', icon: 'mdi-database-outline', description: 'Cannopi uses SQL for relational data and Entity Framework Core to connect its application models to the database.' },
-      { name: 'Azure', icon: 'mdi-microsoft-azure', description: 'I deploy Cannopi’s web application and backend services in Azure, using GitHub Actions for deployment workflows.' },
+      { name: 'C# & REST APIs', icon: 'mdi-language-csharp', description: 'Building backend services in C# and using REST APIs to connect application logic to the frontend.' },
+      { name: 'SQL & Entity Framework', icon: 'mdi-database-outline', description: 'Working with relational data in SQL and using Entity Framework Core to connect application models to the database.' },
+      { name: 'Azure', icon: 'mdi-microsoft-azure', description: 'Deploying web applications and backend services in Azure, using GitHub Actions for deployment workflows.' },
     ],
   },
   {
