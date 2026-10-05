@@ -10,7 +10,7 @@
         <h3 id="ammiti-title">Ammiti</h3>
         <p class="project-subtitle">An entire social platform, built independently.</p>
         <p class="project-description">
-          I designed, built, and launched Ammiti myself, with AI assistance.
+          I designed, built, and launched Ammiti myself.
           From the interface to the backend and database, I took responsibility
           for turning an idea into a complete social platform people can use.
         </p>
