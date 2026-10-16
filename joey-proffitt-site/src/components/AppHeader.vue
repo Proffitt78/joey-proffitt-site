@@ -1,50 +1,67 @@
 <template>
-  <v-app-bar flat>
-    <!-- Logo / Title -->
-    <v-app-bar-title>
-        <RouterLink to="/" class="logo-link">
-            <span>
-                Joey Proffitt
-            </span>
-            <img :src="logo" alt="Joey Proffitt logo" class="logo-img" />
-        </RouterLink>
-    </v-app-bar-title>
+    <v-app-bar flat>
+        <!-- Logo / Title -->
+        <v-app-bar-title>
+            <RouterLink
+                to="/"
+                class="logo-link"
+            >
+                <span> Joey Proffitt </span>
+                <img
+                    :src="logo"
+                    alt="Joey Proffitt logo"
+                    class="logo-img"
+                />
+            </RouterLink>
+        </v-app-bar-title>
 
+        <!-- Desktop Nav -->
+        <template v-if="!mobile">
+            <v-btn
+                v-for="link in navLinks"
+                :key="link.to"
+                :to="link.to"
+                variant="text"
+                class="mx-2"
+            >
+                <v-icon start>{{ link.icon }}</v-icon>
+                {{ link.label }}
+            </v-btn>
+        </template>
 
-    <!-- Desktop Nav -->
-    <template v-if="!mobile">
-      <v-btn
-        v-for="link in navLinks"
-        :key="link.to"
-        :to="link.to"
-        variant="text"
-        class="mx-2">
-        <v-icon start>{{ link.icon }}</v-icon>
-        {{ link.label }}
-      </v-btn>
-    </template>
+        <!-- Mobile Nav (Hamburger) -->
+        <template v-else>
+            <v-btn
+                icon
+                aria-label="Toggle navigation"
+                :aria-expanded="drawer"
+                aria-controls="mobile-navigation"
+                @click="drawer = !drawer"
+            >
+                <v-icon>mdi-menu</v-icon>
+            </v-btn>
+        </template>
+    </v-app-bar>
 
-    <!-- Mobile Nav (Hamburger) -->
-    <template v-else>
-      <v-btn icon aria-label="Toggle navigation" :aria-expanded="drawer" aria-controls="mobile-navigation" @click="drawer = !drawer">
-        <v-icon>mdi-menu</v-icon>
-      </v-btn>
-    </template>
-  </v-app-bar>
-
-  <!-- Drawer for mobile -->
-  <v-navigation-drawer
-    id="mobile-navigation"
-    v-model="drawer"
-    location="right"
-    temporary>
-    <div class="mobile-links">
-      <RouterLink v-for="link in navLinks" :key="link.to" :to="link.to" @click="drawer = false">
-        <v-icon start>{{ link.icon }}</v-icon>
-        {{ link.label }}
-      </RouterLink>
-    </div>
-  </v-navigation-drawer>
+    <!-- Drawer for mobile -->
+    <v-navigation-drawer
+        id="mobile-navigation"
+        v-model="drawer"
+        location="right"
+        temporary
+    >
+        <div class="mobile-links">
+            <RouterLink
+                v-for="link in navLinks"
+                :key="link.to"
+                :to="link.to"
+                @click="drawer = false"
+            >
+                <v-icon start>{{ link.icon }}</v-icon>
+                {{ link.label }}
+            </RouterLink>
+        </div>
+    </v-navigation-drawer>
 </template>
 
 <script setup lang="ts">
@@ -62,7 +79,8 @@ const mobile = computed(() => smAndDown.value)
 
 // Define navigation links
 const navLinks = [
-    { label: 'Projects', to: '/projects', icon: 'mdi-application-brackets-outline' },
+    { label: 'Work', to: '/#projects', icon: 'mdi-application-brackets-outline' },
+    { label: 'Journal', to: '/#journal', icon: 'mdi-notebook-outline' },
     { label: 'Skills', to: '/skills', icon: 'mdi-code-tags' },
     { label: 'About', to: '/about', icon: 'mdi-code-tags' },
     { label: 'Contact', to: '/contact', icon: 'mdi-email' },
@@ -80,8 +98,13 @@ const navLinks = [
         min-height: 48px;
         padding: 12px 20px;
         color: #fff;
-        &:hover { background: fade(@secondary-color, 25%); }
-        &:focus-visible { outline: 2px solid @accent-color-3; outline-offset: -4px; }
+        &:hover {
+            background: fade(@secondary-color, 25%);
+        }
+        &:focus-visible {
+            outline: 2px solid @accent-color-3;
+            outline-offset: -4px;
+        }
     }
 }
 

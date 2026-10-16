@@ -1,20 +1,45 @@
 <template>
     <v-main>
         <AppHeader />
-        <v-container id="main-container">            
-            <section id="landing" class="main-section">
+        <v-container id="main-container">
+            <section
+                id="landing"
+                class="main-section"
+            >
                 <HomePage />
             </section>
-            <section id="projects" class="main-section" aria-labelledby="projects-heading">
-                <Projects />
+            <section
+                id="projects"
+                class="main-section"
+                aria-labelledby="projects-heading"
+            >
+                <Projects preview />
             </section>
-            <section id="skills" class="main-section" aria-labelledby="skills-heading">
+            <section
+                id="journal"
+                class="main-section"
+                aria-labelledby="journal-heading"
+            >
+                <JournalPreview />
+            </section>
+            <section
+                id="skills"
+                class="main-section"
+                aria-labelledby="skills-heading"
+            >
                 <Skills />
             </section>
-            <section id="about" class="main-section" aria-labelledby="about-heading">
+            <section
+                id="about"
+                class="main-section"
+                aria-labelledby="about-heading"
+            >
                 <About />
             </section>
-            <section id="contact" class="main-section">
+            <section
+                id="contact"
+                class="main-section"
+            >
                 <Contact />
             </section>
         </v-container>
@@ -23,13 +48,14 @@
 </template>
 
 <script setup lang="ts">
-    import AppHeader from './components/AppHeader.vue'
-    import AppFooter from './components/AppFooter.vue'
-    import HomePage from './views/HomePage.vue'
-    import Projects from './views/Projects.vue'
-    import Skills from './views/Skills.vue'
-    import Contact from './views/Contact.vue'
-    import About from './views/About.vue'
+import AppHeader from './components/AppHeader.vue'
+import AppFooter from './components/AppFooter.vue'
+import HomePage from './views/HomePage.vue'
+import Projects from './views/Projects.vue'
+import JournalPreview from './components/JournalPreview.vue'
+import Skills from './views/Skills.vue'
+import Contact from './views/Contact.vue'
+import About from './views/About.vue'
 </script>
 
 <style lang="less">
@@ -40,16 +66,16 @@
 }
 .v-main {
     background-color: @page-bg-color;
-  }
+}
 
 .logo-wrap {
     .logo {
         font-size: .px(30)[@value];
-        
+
         a {
             color: @tertiary-color;
             &:hover {
-                background-color: transparent
+                background-color: transparent;
             }
         }
     }
@@ -67,19 +93,23 @@
     position: relative;
     scroll-snap-align: start;
 
-    @media(min-width: 1200px) {
+    @media (min-width: 1200px) {
         padding: 80px 0;
     }
-    
-    >div {
+
+    > div {
         max-width: 1220px;
-        
     }
-    
+
     &#landing {
         min-height: auto;
         padding-top: 0px;
         .gradient-vertical(@primary-color, @page-bg-color);
+    }
+
+    &#journal {
+        min-height: auto;
+        padding: 60px 0;
     }
 
     &#projects {
@@ -131,7 +161,6 @@ html {
         }
     }
 
-
     a.router-link-active {
         background-color: @page-bg-color;
         border-radius: 4px;
@@ -151,7 +180,7 @@ html {
     }
 
     span {
-        font-size:.px(14)[@value];
+        font-size: .px(14)[@value];
     }
 }
 
@@ -195,7 +224,6 @@ html {
             text-align: center;
         }
     }
-    
 }
 //======================================//
 </style>
