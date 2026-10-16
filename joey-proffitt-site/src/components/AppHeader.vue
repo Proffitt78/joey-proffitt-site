@@ -6,7 +6,7 @@
                 to="/"
                 class="logo-link"
             >
-                <span> Joey Proffitt </span>
+                <span>Joey Proffitt</span>
                 <img
                     :src="logo"
                     alt="Joey Proffitt logo"
@@ -74,12 +74,14 @@ import logo from '@/assets/images/logo.png'
 const drawer = ref(false)
 
 // Vuetify composable: tells us if the screen is small
-const { smAndDown } = useDisplay()
-const mobile = computed(() => smAndDown.value)
+// Use the drawer on smaller laptops too, so the expanded navigation has room.
+const { mdAndDown } = useDisplay()
+const mobile = computed(() => mdAndDown.value)
 
 // Define navigation links
 const navLinks = [
-    { label: 'Work', to: '/#projects', icon: 'mdi-application-brackets-outline' },
+    { label: 'Development', to: '/#projects', icon: 'mdi-application-brackets-outline' },
+    { label: 'Graphic Design', to: '/#design', icon: 'mdi-palette-outline' },
     { label: 'Journal', to: '/#journal', icon: 'mdi-notebook-outline' },
     { label: 'Skills', to: '/skills', icon: 'mdi-code-tags' },
     { label: 'About', to: '/about', icon: 'mdi-code-tags' },

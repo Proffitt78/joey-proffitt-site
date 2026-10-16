@@ -3,8 +3,9 @@
         <RouterLink
             class="back-link"
             to="/work"
-            >← Selected work</RouterLink
         >
+            ← Selected work
+        </RouterLink>
         <p class="kicker">Ammiti / Independent project</p>
         <h1>A social platform, built from the ground up.</h1>
         <p class="deck">
@@ -27,7 +28,9 @@
             <h2>Inside the project</h2>
             <article
                 class="entry"
-                v-for="entry in journalEntries"
+                v-for="entry in journalEntries.filter(
+                    (item) => item.relatedProject?.path === '/work/ammiti',
+                )"
                 :key="entry.slug"
             >
                 <h3>

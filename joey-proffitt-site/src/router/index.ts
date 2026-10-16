@@ -5,6 +5,7 @@ import Main from '../Main.vue'
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
     routes: [
+        { path: '/design', redirect: { path: '/', hash: '#design' } },
         { path: '/work', redirect: { path: '/', hash: '#projects' } },
         {
             path: '/work/ammiti',

@@ -1,7 +1,7 @@
 <template>
     <v-container class="projects-page">
         <div class="projects-heading">
-            <p class="eyebrow">Selected work</p>
+            <p class="eyebrow">Development & interface design</p>
             <h2 id="projects-heading">From an idea to a live product.</h2>
         </div>
         <article
@@ -10,7 +10,8 @@
         >
             <div class="project-overview">
                 <p class="project-status">
-                    <span aria-hidden="true"></span> Live · Independently built
+                    <span aria-hidden="true"></span>
+                    Live · Independently built
                 </p>
                 <h3 id="ammiti-title">Ammiti</h3>
                 <p class="project-subtitle">An entire social platform, built independently.</p>
@@ -25,20 +26,24 @@
                         to="/work/ammiti"
                         size="large"
                         append-icon="mdi-arrow-right"
-                        >Explore the case study</v-btn
                     >
+                        Explore the case study
+                    </v-btn>
                     <v-btn
                         href="https://www.ammiti.com"
                         target="_blank"
                         rel="noopener noreferrer"
                         size="large"
                         append-icon="mdi-open-in-new"
-                        >Visit Ammiti</v-btn
                     >
+                        Visit Ammiti
+                    </v-btn>
                     <a
                         href="mailto:joeyproffitt78@gmail.com?subject=Let%E2%80%99s%20talk%20about%20Ammiti"
-                        >Talk through the project <span aria-hidden="true">↗</span></a
                     >
+                        Talk through the project
+                        <span aria-hidden="true">↗</span>
+                    </a>
                 </div>
             </div>
             <RouterLink
@@ -46,12 +51,14 @@
                 to="/work/ammiti"
                 class="project-preview-image"
                 aria-label="View the Ammiti case study"
-                ><img
+            >
+                <img
                     src="/images/ammiti/ammiti-profile.png"
                     alt="Ammiti member profile and media gallery"
                     loading="lazy"
-                /><span>See the design and explore the project →</span></RouterLink
-            >
+                />
+                <span>See the design and explore the project →</span>
+            </RouterLink>
             <div
                 v-else
                 class="project-story"

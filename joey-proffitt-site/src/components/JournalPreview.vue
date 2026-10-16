@@ -8,8 +8,9 @@
             <RouterLink
                 class="browse-link"
                 to="/journal"
-                >Browse the journal →</RouterLink
             >
+                Browse the journal →
+            </RouterLink>
         </div>
         <p class="description">
             Design decisions, stories from building Ammiti, and a growing space for photography.
@@ -22,12 +23,13 @@
             <span
                 v-for="series in journalSeries"
                 :key="series.id"
-                >{{ series.title }}</span
             >
+                {{ series.title }}
+            </span>
         </div>
         <div class="journal-stories">
             <article
-                v-for="entry in journalEntries.slice(0, 2)"
+                v-for="entry in journalEntries.slice(-3).reverse()"
                 :key="entry.slug"
             >
                 <p class="eyebrow">
@@ -40,8 +42,9 @@
                 <RouterLink
                     class="browse-link"
                     :to="'/journal/' + entry.slug"
-                    >Read the story →</RouterLink
                 >
+                    Read the story →
+                </RouterLink>
             </article>
         </div>
     </v-container>
@@ -90,7 +93,7 @@ p {
 }
 .journal-stories {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
     gap: 24px;
     article {
         padding: 28px;

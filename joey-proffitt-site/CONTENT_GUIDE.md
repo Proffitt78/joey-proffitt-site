@@ -22,3 +22,5 @@ The shared .feature-image rule in ContentLayout.vue applies to all feature image
 
 Use four spaces for indentation, one CSS declaration per line, and expanded
 templates and content objects so the source remains easy to edit by hand.
+
+Graphic design projects are collected in src/components/GraphicDesign.vue on the homepage (#design). Add future design cards there and link to the relevant project or journal story. The same article can be linked from several collections without duplicating its content.

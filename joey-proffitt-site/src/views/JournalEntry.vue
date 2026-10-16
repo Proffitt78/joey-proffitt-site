@@ -1,14 +1,15 @@
 <template>
-    <ContentLayout
-        ><article
+    <ContentLayout>
+        <article
             v-if="entry"
             class="reading-column"
         >
             <RouterLink
                 class="back-link"
                 :to="'/journal#' + entry.series"
-                >← {{ series?.title }}</RouterLink
             >
+                ← {{ series?.title }}
+            </RouterLink>
             <p class="kicker">{{ series?.title }} / By Joey Proffitt</p>
             <h1>{{ entry.title }}</h1>
             <p class="deck">{{ entry.description }}</p>
@@ -23,6 +24,7 @@
                 >
                     {{ paragraph }}
                 </p>
+                <DunesLogoStudy v-if="section.illustration === 'dunes-logo'" />
                 <AmmitiGallery v-if="section.gallery" />
                 <figure v-if="section.image">
                     <img
@@ -37,17 +39,27 @@
             </section>
             <RouterLink
                 class="text-link"
-                to="/work/ammiti"
-                >View the Ammiti project →</RouterLink
+                v-if="entry.relatedProject"
+                :to="entry.relatedProject.path"
             >
+                {{ entry.relatedProject.label }} →
+            </RouterLink>
+            <RouterLink
+                v-if="entry.series === 'behind-the-identity'"
+                class="text-link design-collection-link"
+                to="/#design"
+            >
+                View all graphic design work →
+            </RouterLink>
             <aside class="feedback">
                 <h2>Have a question or a thought?</h2>
                 <p>I’d love to hear it.</p>
                 <a
                     class="text-link"
                     :href="feedbackLink"
-                    >Send me feedback →</a
                 >
+                    Send me feedback →
+                </a>
             </aside>
             <nav
                 class="entry-list"
@@ -61,8 +73,9 @@
                     <RouterLink
                         class="text-link"
                         :to="'/journal/' + other.slug"
-                        >{{ other.title }} →</RouterLink
                     >
+                        {{ other.title }} →
+                    </RouterLink>
                 </div>
             </nav>
         </article>
@@ -71,16 +84,18 @@
             <RouterLink
                 class="text-link"
                 to="/journal"
-                >Return to the journal →</RouterLink
             >
-        </div></ContentLayout
-    >
+                Return to the journal →
+            </RouterLink>
+        </div>
+    </ContentLayout>
 </template>
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useRoute } from 'vue-router'
 import ContentLayout from '@/components/ContentLayout.vue'
 import AmmitiGallery from '@/components/AmmitiGallery.vue'
+import DunesLogoStudy from '@/components/DunesLogoStudy.vue'
 import { journalEntries, journalSeries } from '@/data/journal'
 const route = useRoute()
 const entry = computed(() => journalEntries.find((item) => item.slug === route.params.slug))

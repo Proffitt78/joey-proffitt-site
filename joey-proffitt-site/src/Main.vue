@@ -16,6 +16,13 @@
                 <Projects preview />
             </section>
             <section
+                id="design"
+                class="main-section"
+                aria-labelledby="design-heading"
+            >
+                <GraphicDesign />
+            </section>
+            <section
                 id="journal"
                 class="main-section"
                 aria-labelledby="journal-heading"
@@ -53,6 +60,7 @@ import AppFooter from './components/AppFooter.vue'
 import HomePage from './views/HomePage.vue'
 import Projects from './views/Projects.vue'
 import JournalPreview from './components/JournalPreview.vue'
+import GraphicDesign from './components/GraphicDesign.vue'
 import Skills from './views/Skills.vue'
 import Contact from './views/Contact.vue'
 import About from './views/About.vue'
@@ -105,6 +113,11 @@ import About from './views/About.vue'
         min-height: auto;
         padding-top: 0px;
         .gradient-vertical(@primary-color, @page-bg-color);
+    }
+
+    &#design {
+        min-height: auto;
+        padding: 60px 0;
     }
 
     &#journal {
